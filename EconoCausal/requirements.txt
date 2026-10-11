@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+jupyter
+ipykernel
+dowhy
+econml
+scipy
+plotly
+fastapi
+uvicorn

@@ -1,0 +1,9 @@
+dataset,rows,columns,missing_cells,duplicate_rows
+train,78369,5,0,0
+test,50226,4,0,0
+campaigns,28,4,0,0
+customers,760,7,867,0
+transactions,1324566,7,0,2916
+coupon_mapping,92663,2,0,0
+items,74066,4,0,0
+submission,50226,2,0,0

@@ -1,0 +1,3 @@
+dataset,column,missing_count,missing_percentage
+customer_demographics,marital_status,329,43.29
+customer_demographics,no_of_children,538,70.79

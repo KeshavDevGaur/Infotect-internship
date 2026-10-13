@@ -1,0 +1,5 @@
+relationship,matched_rows,total_rows,unmatched_rows,match_percentage
+Training → Campaign,78369,78369,0,100.0
+Training → Customer demographics,43661,78369,34708,55.71
+Training → Coupon mapping,78369,78369,0,100.0
+Coupon mapping → Item data,92663,92663,0,100.0

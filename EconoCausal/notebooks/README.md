@@ -1,41 +1,58 @@
-# EconoCausal Notebooks
 
-This directory contains the Jupyter notebooks used to inspect and validate the project dataset.
+---
 
-## Day 1 — Initial Dataset Inspection
 
-File: `01_data_inspection.ipynb`
+# EconoCausal — Jupyter Notebooks
 
-- Loaded the available CSV datasets.
-- Examined dataset dimensions.
-- Summarized missing values and duplicate records.
-- Generated the initial dataset summary.
+This folder contains the Jupyter notebooks used for dataset inspection, data quality analysis, relationship validation, and target variable analysis.
 
-## Day 2 — Data Quality Analysis
+## Notebook Index
 
-File: `02_data_quality_analysis.ipynb`
+| Notebook | Description | Status |
+|---|---|---|
+| `01_data_inspection.ipynb` | Loads datasets and examines their dimensions, columns, and structure. | Completed |
+| `02_data_quality_analysis.ipynb` | Investigates missing values, duplicate records, and data quality issues. | Completed |
+| `03_dataset_relationships.ipynb` | Validates dataset relationships and examines training data structure. | Completed |
+| `04_target_analysis.ipynb` | Analyzes redemption patterns, campaign performance, and campaign-type redemption rates. | Completed |
 
-- Analyzed missing values.
-- Examined duplicate records.
-- Checked customer demographic coverage.
-- Exported data-quality reports.
+## Day 4 Analysis
 
-## Day 3 — Dataset Relationship Validation
+The fourth notebook focuses on the target variable:
 
-File: `03_dataset_relationships.ipynb`
+`redemption_status`
 
-- Validated training-to-campaign relationships.
-- Checked coupon identifiers against coupon-item mapping.
-- Investigated customer demographic matches.
-- Checked training ID uniqueness.
-- Exported relationship and training-structure reports.
+The analysis includes:
 
-## Execution Notes
+- Target variable distribution.
+- Redemption and non-redemption counts.
+- Campaign-level redemption rates.
+- Comparison of redemption rates across campaign types.
+- Identification of the top 10 campaigns by observed redemption rate.
+- Campaign performance visualization.
+- Exporting analysis results to CSV files.
 
-Run the notebooks in order: Day 1, Day 2, then Day 3.
+## Technologies Used
 
-The notebooks expect the source CSV files to be available in the local `data/raw/` directory. Raw datasets are not included in this repository.
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- JupyterLab
 
-## Important Note
+## How to Run the Notebooks
 
-Successful identifier matching does not by itself establish a causal relationship. Treatment definitions, outcome variables, and identification assumptions must be assessed before causal modeling.
+1. Open the project in JupyterLab.
+2. Place the original CSV files in the local `data/raw/` directory.
+3. Run the notebooks in numerical order.
+4. Ensure all required input files are available.
+5. Review the generated outputs in the `reports/` directory.
+
+The original dataset files are excluded from GitHub.
+
+## Upcoming Work
+
+- Investigate customer and coupon characteristics.
+- Explore transaction behavior.
+- Analyze discount-related variables.
+- Assess the feasibility of causal effect estimation.

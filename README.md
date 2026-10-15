@@ -6,7 +6,7 @@
 
 EconoCausal is a data science and causal machine learning project focused on analyzing marketing campaigns, coupon redemption, customer behavior, and discount-related variables.
 
-The long-term objective is to investigate whether Double Machine Learning (DML) can support data-driven pricing decisions.
+The objective is to investigate whether Double Machine Learning (DML) can support data-driven pricing decisions.
 
 ## Project Objectives
 
@@ -14,25 +14,18 @@ The long-term objective is to investigate whether Double Machine Learning (DML) 
 - Perform data quality checks.
 - Validate relationships between datasets.
 - Investigate customer coupon redemption behavior.
-- Explore discount-related variables.
+- Explore customer demographics and coupon characteristics.
 - Assess the feasibility of causal effect estimation.
-- Build a reproducible machine learning workflow.
 
 ## Dataset
 
 This project uses the AmExpert 2019 Marketing Campaign dataset.
 
-The dataset includes:
-- Training and test datasets.
-- Campaign information.
-- Customer demographic information.
-- Customer transaction records.
-- Coupon-to-item mappings.
-- Product and item information.
+The dataset includes training and test data, campaign information, customer demographics, transaction records, coupon-item mappings, and item information.
 
 Dataset source: https://www.kaggle.com/competitions/amexpert-2019/data
 
-Raw dataset files are maintained locally and are not uploaded to this repository.
+Raw datasets are maintained locally and are not uploaded to this repository.
 
 ## Technology Stack
 
@@ -48,66 +41,61 @@ Raw dataset files are maintained locally and are not uploaded to this repository
 ## Project Progress
 
 ### Day 1 — Dataset Inspection
-- Loaded and inspected the available CSV files.
+- Loaded and inspected the available datasets.
 - Examined dataset dimensions and columns.
 - Generated a dataset summary report.
 
 ### Day 2 — Data Quality Analysis
 - Analyzed missing values.
 - Checked duplicate records.
-- Examined dataset quality issues.
-- Validated basic dataset characteristics.
+- Investigated data quality issues.
 
 ### Day 3 — Dataset Relationship Validation
 - Checked campaign and coupon key coverage.
 - Examined training dataset identifiers.
 - Investigated customer demographic matching.
-- Generated relationship validation reports.
 
 ### Day 4 — Target Variable and Campaign Analysis
 - Analyzed the `redemption_status` target variable.
-- Examined redemption and non-redemption counts.
-- Calculated redemption rates for individual campaigns.
+- Calculated campaign-level redemption rates.
 - Compared redemption rates across campaign types.
 - Identified the top 10 campaigns by observed redemption rate.
-- Created campaign performance visualizations.
-- Exported analysis results to CSV files.
+- Created visualizations and CSV reports.
 
-## Day 4 Outputs
+### Day 5 — Customer and Coupon Analysis
+- Analyzed customer age ranges, marital status, and income brackets.
+- Investigated missing demographic values.
+- Examined product categories and brand types.
+- Analyzed coupon-to-item relationships.
+- Calculated observed redemption rates by age group.
+- Compared redemption rates by marital status and income bracket.
+- Exported five analysis reports to CSV.
 
-The following reports were generated:
+## Day 5 Outputs
 
-- `day04_campaign_redemption.csv`
-- `day04_campaign_type_analysis.csv`
-- `day04_top_campaigns.csv`
-- `DAY4_REPORT.md`
+- `day05_age_redemption.csv`
+- `day05_marital_redemption.csv`
+- `day05_income_redemption.csv`
+- `day05_coupon_item_counts.csv`
+- `day05_category_counts.csv`
+- `DAY5_REPORT.md`
 
-Notebook: `04_target_analysis.ipynb`
+Notebook: `notebooks/05_customer_coupon_analysis.ipynb`
 
-## Repository Structure
+## Important Analytical Considerations
 
+- The target variable is highly imbalanced, so accuracy alone may not be sufficient for evaluating future predictive models.
+- Observed redemption rates do not establish causal effects.
+- Missing demographic information requires careful handling.
+- Transaction discount values do not automatically establish the treatment assigned to every customer.
+- Causal modeling requires a defensible treatment definition, outcome, covariates, and identification assumptions.
 
-EconoCausal/
-├── README.md
-├── .gitignore
-├── requirements.txt
-├── notebooks/
-│   ├── README.md
-│   ├── 01_data_inspection.ipynb
-│   ├── 02_data_quality_analysis.ipynb
-│   ├── 03_dataset_relationships.ipynb
-│   └── 04_target_analysis.ipynb
-└── reports/
-    ├── README.md
-    ├── DAY1_REPORT.md
-    ├── DAY2_REPORT.md
-    ├── DAY3_REPORT.md
-    ├── DAY4_REPORT.md
-    ├── day01_dataset_summary.csv
-    ├── day02_duplicate_analysis.csv
-    ├── day02_missing_values.csv
-    ├── day03_relationship_validation.csv
-    ├── day03_training_structure.csv
-    ├── day04_campaign_redemption.csv
-    ├── day04_campaign_type_analysis.csv
-    └── day04_top_campaigns.csv
+## Next Steps
+
+- Investigate transaction behavior and discount-related variables.
+- Examine relationships between campaigns, coupons, customers, and transactions.
+- Assess whether the data supports credible causal effect estimation.
+
+---
+
+**Current Status:** Day 5 analysis completed.

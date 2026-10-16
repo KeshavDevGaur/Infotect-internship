@@ -10,7 +10,8 @@ This folder contains the daily internship reports and CSV analysis outputs gener
 | `DAY2_REPORT.md` | Documents missing-value analysis, duplicate checks, and data quality findings. |
 | `DAY3_REPORT.md` | Documents dataset relationship validation and training data structure. |
 | `DAY4_REPORT.md` | Documents target variable analysis and campaign performance investigation. |
-| `DAY5_REPORT.md` | Documents customer demographics, coupon-item relationships, product categories, and observed redemption patterns. |
+| `DAY5_REPORT.md` | Documents customer demographics, coupon-item relationships, and observed redemption patterns. |
+| `DAY6_REPORT.md` | Documents transaction data inspection, discount analysis, duplicate checks, and correlation analysis. |
 
 ## CSV Analysis Outputs
 
@@ -37,15 +38,23 @@ This folder contains the daily internship reports and CSV analysis outputs gener
 - `day05_coupon_item_counts.csv` — number of items associated with each coupon.
 - `day05_category_counts.csv` — top 10 product categories by item count.
 
-## Day 5 Analysis Summary
+### Day 6
+- `day06_transaction_summary.csv` — descriptive statistics for transaction variables.
+- `day06_missing_values.csv` — missing-value counts and percentages.
+- `day06_duplicate_analysis.csv` — duplicate transaction analysis.
+- `day06_discount_correlation.csv` — correlations between numerical transaction variables.
 
-The Day 5 analysis investigated:
+## Day 6 Analysis Summary
 
-1. Customer age ranges, marital status, and income brackets.
-2. Missing values in customer demographic information.
-3. Product categories and brand types.
-4. The number of items associated with each coupon.
-5. Observed redemption rates across demographic groups.
+The Day 6 analysis investigated:
+
+1. Transaction columns, data types, and descriptive statistics.
+2. Selling prices, quantities, and discount values.
+3. Missing values in the transaction dataset.
+4. Customer transaction activity.
+5. Exact duplicate transaction rows and repeated customer-item combinations.
+6. Coupon discount and other discount distributions.
+7. Correlations between numerical transaction variables.
 
 ## Reproducibility
 
@@ -55,10 +64,12 @@ Original raw datasets are maintained locally and are not stored in this reposito
 
 ## Important Limitations
 
-These reports describe data quality and observed patterns. They do not establish that customer characteristics, campaigns, or discounts caused changes in redemption behavior.
+These reports describe data quality and observed patterns. They do not establish that customer characteristics, campaigns, or discounts caused changes in purchasing behavior.
+
+Duplicate rows should not be removed automatically, and correlations should not be interpreted as causal effects.
 
 Any future causal analysis must define the treatment, outcome, covariates, and identification assumptions appropriately.
 
 ---
 
-**Latest Progress:** Day 5 — Customer and Coupon Analysis.
+**Latest Progress:** Day 6 — Transaction and Discount Analysis.

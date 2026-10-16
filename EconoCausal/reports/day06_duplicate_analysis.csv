@@ -1,0 +1,5 @@
+metric,value
+total_records,1324566.0
+exact_duplicate_rows,2916.0
+duplicate_percentage,0.22
+repeated_customer_item_rows,730909.0

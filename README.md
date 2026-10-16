@@ -4,7 +4,7 @@
 
 ## Project Overview
 
-EconoCausal is a data science and causal machine learning project focused on analyzing marketing campaigns, coupon redemption, customer behavior, and discount-related variables.
+EconoCausal is a data science and causal machine learning project focused on analyzing marketing campaigns, coupon redemption, customer behavior, transaction data, and discount-related variables.
 
 The objective is to investigate whether Double Machine Learning (DML) can support data-driven pricing decisions.
 
@@ -14,7 +14,8 @@ The objective is to investigate whether Double Machine Learning (DML) can suppor
 - Perform data quality checks.
 - Validate relationships between datasets.
 - Investigate customer coupon redemption behavior.
-- Explore customer demographics and coupon characteristics.
+- Analyze customer demographics and coupon characteristics.
+- Examine transaction prices and discount variables.
 - Assess the feasibility of causal effect estimation.
 
 ## Dataset
@@ -25,7 +26,7 @@ The dataset includes training and test data, campaign information, customer demo
 
 Dataset source: https://www.kaggle.com/competitions/amexpert-2019/data
 
-Raw datasets are maintained locally and are not uploaded to this repository.
+Raw dataset files are maintained locally and are not uploaded to this repository.
 
 ## Technology Stack
 
@@ -60,42 +61,50 @@ Raw datasets are maintained locally and are not uploaded to this repository.
 - Calculated campaign-level redemption rates.
 - Compared redemption rates across campaign types.
 - Identified the top 10 campaigns by observed redemption rate.
-- Created visualizations and CSV reports.
+- Generated visualizations and CSV reports.
 
 ### Day 5 — Customer and Coupon Analysis
 - Analyzed customer age ranges, marital status, and income brackets.
 - Investigated missing demographic values.
 - Examined product categories and brand types.
 - Analyzed coupon-to-item relationships.
-- Calculated observed redemption rates by age group.
-- Compared redemption rates by marital status and income bracket.
-- Exported five analysis reports to CSV.
+- Calculated observed redemption rates across demographic groups.
+- Exported analysis results to CSV files.
 
-## Day 5 Outputs
+### Day 6 — Transaction and Discount Analysis
+- Inspected transaction columns, data types, and descriptive statistics.
+- Examined selling prices, quantities, and discount variables.
+- Investigated missing values and duplicate transaction rows.
+- Analyzed customer transaction activity.
+- Visualized coupon discount and other discount distributions.
+- Examined correlations between numerical transaction variables.
+- Exported four analysis reports to CSV files.
 
-- `day05_age_redemption.csv`
-- `day05_marital_redemption.csv`
-- `day05_income_redemption.csv`
-- `day05_coupon_item_counts.csv`
-- `day05_category_counts.csv`
-- `DAY5_REPORT.md`
+## Day 6 Outputs
 
-Notebook: `notebooks/05_customer_coupon_analysis.ipynb`
+- `day06_transaction_summary.csv`
+- `day06_missing_values.csv`
+- `day06_duplicate_analysis.csv`
+- `day06_discount_correlation.csv`
+- `DAY6_REPORT.md`
+
+Notebook: `notebooks/06_transaction_discount_analysis.ipynb`
 
 ## Important Analytical Considerations
 
 - The target variable is highly imbalanced, so accuracy alone may not be sufficient for evaluating future predictive models.
-- Observed redemption rates do not establish causal effects.
-- Missing demographic information requires careful handling.
-- Transaction discount values do not automatically establish the treatment assigned to every customer.
+- Observed redemption rates and correlations do not establish causal effects.
+- Missing demographic and transaction values require careful treatment.
+- Duplicate records should not be removed automatically without understanding their meaning.
+- Transaction-level discount values do not necessarily identify the discount treatment assigned to every customer.
 - Causal modeling requires a defensible treatment definition, outcome, covariates, and identification assumptions.
 
 ## Next Steps
 
-- Investigate transaction behavior and discount-related variables.
-- Examine relationships between campaigns, coupons, customers, and transactions.
-- Assess whether the data supports credible causal effect estimation.
+- Investigate relationships between transactions, coupons, campaigns, and redemption outcomes.
+- Examine whether a suitable treatment variable can be defined.
+- Assess whether the available data supports credible causal effect estimation.
 
 ---
 
-**Current Status:** Day 5 analysis completed.
+**Current Status:** Day 6 transaction and discount analysis completed.

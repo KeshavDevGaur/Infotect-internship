@@ -1,35 +1,58 @@
-# EconoCausal — Jupyter Notebooks
+# EconoCausal — Notebooks
 
-This folder contains the Jupyter notebooks used for dataset inspection, data quality analysis, relationship validation, target analysis, customer-coupon analysis, and transaction-discount analysis.
+This directory contains the Jupyter notebooks developed for the EconoCausal internship project at Infotact Solutions.
+
+The notebooks document dataset inspection, data quality checks, campaign analysis, customer behavior, transaction discounts, and dataset integration.
 
 ## Notebook Index
 
-| Notebook | Description | Status |
-|---|---|---|
-| `01_data_inspection.ipynb` | Loads datasets and examines their dimensions, columns, and structure. | Completed |
-| `02_data_quality_analysis.ipynb` | Investigates missing values, duplicate records, and data quality issues. | Completed |
-| `03_dataset_relationships.ipynb` | Validates dataset relationships and examines training data structure. | Completed |
-| `04_target_analysis.ipynb` | Analyzes redemption patterns, campaign performance, and campaign-type redemption rates. | Completed |
-| `05_customer_coupon_analysis.ipynb` | Analyzes customer demographics, coupon-item mappings, product categories, and observed redemption rates. | Completed |
-| `06_transaction_discount_analysis.ipynb` | Examines transaction records, selling prices, discount distributions, duplicate rows, and correlations. | Completed |
+| Day | Notebook | Description | Status |
+|---|---|---|---|
+| 1 | `01_data_inspection.ipynb` | Initial dataset inspection, dimensions, columns, and summary statistics | Completed |
+| 2 | `02_data_quality_analysis.ipynb` | Missing values, duplicate records, and data quality | Completed |
+| 3 | `03_dataset_relationships.ipynb` | Join keys, dataset relationships, and unmatched records | Completed |
+| 4 | `04_target_analysis.ipynb` | Redemption distribution and campaign-level analysis | Completed |
+| 5 | `05_customer_coupon_analysis.ipynb` | Customer demographics, coupon-item mappings, and category analysis | Completed |
+| 6 | `06_transaction_discount_analysis.ipynb` | Transaction patterns, discount variables, missing values, and duplicates | Completed |
+| 7 | `07_dataset_integration.ipynb` | Dataset integration, merge validation, and causal-variable investigation | Completed |
 
-## Day 6 Analysis
+## Topics Covered
 
-The sixth notebook focuses on transaction and discount data.
+### Data Inspection and Quality
+- Dataset dimensions and column inspection
+- Missing-value analysis
+- Duplicate detection
+- Key uniqueness and relationship validation
 
-The analysis includes:
+### Exploratory Data Analysis
+- Target distribution
+- Campaign redemption patterns
+- Customer demographic analysis
+- Coupon-item mapping analysis
+- Transaction and discount exploration
 
-- Transaction columns and data types.
-- Descriptive statistics for numerical variables.
-- Selling prices, quantities, and discount values.
-- Missing-value analysis.
-- Customer transaction activity.
-- Exact duplicate transaction checks.
-- Coupon discount and other discount distributions.
-- Correlations between numerical transaction variables.
-- Exporting analysis results to CSV files.
+### Dataset Integration
+- Merging training records with campaign information
+- Integrating customer demographics
+- Connecting coupon mappings with item information
+- Connecting transactions with customer demographics
+- Checking row preservation and unmatched records
 
-## Technologies Used
+### Causal Analysis Preparation
+- Identifying potential treatment and outcome variables
+- Inspecting candidate covariates
+- Investigating data limitations
+- Evaluating whether causal estimation is defensible
+
+## Outputs
+
+Analysis summaries and daily reports are stored in the `../reports/` directory.
+
+## Important Note
+
+Observed correlations and redemption patterns do not establish causal effects. Treatment definition, outcome selection, covariates, and identification assumptions must be evaluated before applying Double Machine Learning.
+
+## Tools Used
 
 - Python
 - Pandas
@@ -38,25 +61,7 @@ The analysis includes:
 - Seaborn
 - JupyterLab
 
-## How to Run the Notebooks
+---
 
-1. Open the project in JupyterLab.
-2. Place the original CSV files in the local `data/raw/` directory.
-3. Run the notebooks in numerical order.
-4. Ensure all required input files are available.
-5. Review the generated outputs in the `reports/` directory.
-
-Original dataset files are maintained locally and are not uploaded to GitHub.
-
-## Important Considerations
-
-- Correlation does not establish causation.
-- Duplicate transaction rows should not automatically be removed.
-- Transaction-level discounts do not necessarily identify the treatment assigned to every customer.
-- Causal analysis requires a defensible treatment definition, outcome, covariates, and identification assumptions.
-
-## Upcoming Work
-
-- Investigate relationships between transactions, coupons, campaigns, and redemption outcomes.
-- Examine whether a suitable treatment variable can be defined.
-- Assess the feasibility of causal effect estimation.
+**Project:** EconoCausal — Dynamic Pricing via Double Machine Learning  
+**Organization:** Infotact Solutions

@@ -1,0 +1,7 @@
+Variable,Role,Dataset,Current Understanding,Status
+redemption_status,Outcome,train.csv,Observed coupon redemption outcome,Identified
+coupon_discount,Potential treatment,customer_transaction_data.csv,Recorded transaction discount,Treatment assignment not established
+other_discount,Potential treatment,customer_transaction_data.csv,Recorded other discount,Treatment assignment not established
+campaign_id,Potential exposure indicator,train.csv,Identifies the associated campaign,Assignment mechanism requires investigation
+customer_id,Identifier,Multiple datasets,Connects records for a customer,Not a treatment by itself
+customer demographics,Potential covariates,customer_demographics.csv,Describes customer characteristics,Missingness and timing require assessment

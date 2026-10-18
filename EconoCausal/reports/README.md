@@ -1,75 +1,81 @@
 # EconoCausal — Reports and Analysis Outputs
 
-This folder contains the daily internship reports and CSV analysis outputs generated during the EconoCausal project.
+This directory contains daily progress reports and CSV outputs generated during the development of the EconoCausal internship project at Infotact Solutions.
 
-## Daily Reports
+The reports document dataset inspection, data quality analysis, campaign redemption, customer behavior, transaction analysis, and dataset integration.
 
-| Report | Description |
-|---|---|
-| `DAY1_REPORT.md` | Documents initial dataset inspection and project setup. |
-| `DAY2_REPORT.md` | Documents missing-value analysis, duplicate checks, and data quality findings. |
-| `DAY3_REPORT.md` | Documents dataset relationship validation and training data structure. |
-| `DAY4_REPORT.md` | Documents target variable analysis and campaign performance investigation. |
-| `DAY5_REPORT.md` | Documents customer demographics, coupon-item relationships, and observed redemption patterns. |
-| `DAY6_REPORT.md` | Documents transaction data inspection, discount analysis, duplicate checks, and correlation analysis. |
+## Daily Progress Reports
+
+| Day | Report | Description | Status |
+|---|---|---|---|
+| 1 | `DAY1_REPORT.md` | Dataset inspection and initial project setup | Completed |
+| 2 | `DAY2_REPORT.md` | Missing values and duplicate analysis | Completed |
+| 3 | `DAY3_REPORT.md` | Dataset relationships and join validation | Completed |
+| 4 | `DAY4_REPORT.md` | Target distribution and campaign analysis | Completed |
+| 5 | `DAY5_REPORT.md` | Customer demographics and coupon-item analysis | Completed |
+| 6 | `DAY6_REPORT.md` | Transaction and discount analysis | Completed |
+| 7 | `DAY7_REPORT.md` | Dataset integration and causal feasibility investigation | Completed |
 
 ## CSV Analysis Outputs
 
-### Day 1
-- `day01_dataset_summary.csv` — summary of the available datasets.
+### Day 1 — Dataset Inspection
+- `day01_dataset_summary.csv`
 
-### Day 2
-- `day02_missing_values.csv` — missing-value analysis.
-- `day02_duplicate_analysis.csv` — duplicate-record analysis.
+### Day 2 — Data Quality Analysis
+- `day02_missing_values.csv`
+- `day02_duplicate_analysis.csv`
 
-### Day 3
-- `day03_relationship_validation.csv` — dataset relationship and key coverage validation.
-- `day03_training_structure.csv` — training dataset structure and identifier analysis.
+### Day 3 — Dataset Relationship Validation
+- `day03_relationship_validation.csv`
+- `day03_training_structure.csv`
 
-### Day 4
-- `day04_campaign_redemption.csv` — redemption counts and rates by campaign.
-- `day04_campaign_type_analysis.csv` — redemption analysis grouped by campaign type.
-- `day04_top_campaigns.csv` — top 10 campaigns ranked by observed redemption rate.
+### Day 4 — Campaign and Target Analysis
+- `day04_campaign_redemption.csv`
+- `day04_campaign_type_analysis.csv`
+- `day04_top_campaigns.csv`
 
-### Day 5
-- `day05_age_redemption.csv` — observed redemption rates by age group.
-- `day05_marital_redemption.csv` — observed redemption rates by marital status.
-- `day05_income_redemption.csv` — observed redemption rates by income bracket.
-- `day05_coupon_item_counts.csv` — number of items associated with each coupon.
-- `day05_category_counts.csv` — top 10 product categories by item count.
+### Day 5 — Customer and Coupon Analysis
+- `day05_age_redemption.csv`
+- `day05_marital_redemption.csv`
+- `day05_income_redemption.csv`
+- `day05_coupon_item_counts.csv`
+- `day05_category_counts.csv`
 
-### Day 6
-- `day06_transaction_summary.csv` — descriptive statistics for transaction variables.
-- `day06_missing_values.csv` — missing-value counts and percentages.
-- `day06_duplicate_analysis.csv` — duplicate transaction analysis.
-- `day06_discount_correlation.csv` — correlations between numerical transaction variables.
+### Day 6 — Transaction and Discount Analysis
+- `day06_transaction_summary.csv`
+- `day06_missing_values.csv`
+- `day06_duplicate_analysis.csv`
+- `day06_discount_correlation.csv`
 
-## Day 6 Analysis Summary
+### Day 7 — Dataset Integration and Causal Variables
+- `day07_integration_summary.csv`
+- `day07_causal_variable_summary.csv`
 
-The Day 6 analysis investigated:
+## Purpose of These Reports
 
-1. Transaction columns, data types, and descriptive statistics.
-2. Selling prices, quantities, and discount values.
-3. Missing values in the transaction dataset.
-4. Customer transaction activity.
-5. Exact duplicate transaction rows and repeated customer-item combinations.
-6. Coupon discount and other discount distributions.
-7. Correlations between numerical transaction variables.
+The reports and CSV files support:
 
-## Reproducibility
+- Reproducible data exploration
+- Data-quality assessment
+- Validation of dataset relationships
+- Investigation of campaign and redemption patterns
+- Documentation of missing values and duplicate records
+- Evaluation of potential variables for causal analysis
 
-The CSV files are generated by the corresponding Jupyter notebooks in the `../notebooks/` directory.
+## Important Causal Analysis Consideration
 
-Original raw datasets are maintained locally and are not stored in this repository.
+The presence of transaction discount variables does not automatically establish a valid treatment variable.
 
-## Important Limitations
+Before applying Double Machine Learning, the project must define a defensible treatment, outcome, covariates, and identification assumptions. Observational correlations alone do not demonstrate causal effects.
 
-These reports describe data quality and observed patterns. They do not establish that customer characteristics, campaigns, or discounts caused changes in purchasing behavior.
+## Related Project Files
 
-Duplicate rows should not be removed automatically, and correlations should not be interpreted as causal effects.
-
-Any future causal analysis must define the treatment, outcome, covariates, and identification assumptions appropriately.
+- Analysis notebooks are stored in `../notebooks/`.
+- Project documentation is maintained in the parent `EconoCausal/` directory.
+- Raw datasets are excluded from version control.
 
 ---
 
-**Latest Progress:** Day 6 — Transaction and Discount Analysis.
+**Project:** EconoCausal — Dynamic Pricing via Double Machine Learning  
+**Organization:** Infotact Solutions  
+**Progress:** Days 1–7 completed

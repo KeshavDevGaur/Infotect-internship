@@ -77,6 +77,7 @@ Infotect-internship/
     │   ├── 05_customer_coupon_analysis.ipynb
     │   ├── 06_transaction_discount_analysis.ipynb
     │   └── 07_dataset_integration.ipynb
+    │   └── 08_treatment_outcome_analysis.ipynb
     │
     └── reports/
         ├── README.md
@@ -87,6 +88,7 @@ Infotect-internship/
         ├── DAY5_REPORT.md
         ├── DAY6_REPORT.md
         ├── DAY7_REPORT.md
+        ├── DAY8_REPORT.md
         ├── day01_dataset_summary.csv
         ├── day02_duplicate_analysis.csv
         ├── day02_missing_values.csv
@@ -106,6 +108,7 @@ Infotect-internship/
         ├── day06_discount_correlation.csv
         ├── day07_integration_summary.csv
         └── day07_causal_variable_summary.csv
+        └── day08_causal_assessment.csv
 ```
 
 *Note: This structure documents the intended project layout. It should match the files actually committed to the repository.*
@@ -190,7 +193,23 @@ Infotect-internship/
 - `day07_integration_summary.csv`
 - `day07_causal_variable_summary.csv`
 
-**Status:** Days 1–7 completed.
+### Day 8 — Treatment and Outcome Definition
+- Loaded training, transaction, campaign, and customer demographic datasets.
+- Inspected columns to identify potential treatment and outcome variables.
+- Investigated discount-related variables and their distributions.
+- Examined the distribution of the `redemption_status` outcome.
+- Checked the availability of outcome and potential treatment-related variables.
+- Inspected campaign information and campaign characteristics.
+- Created a preliminary causal variable assessment.
+- Documented uncertainties regarding treatment assignment and causal feasibility.
+
+**Outputs:**
+
+- `day08_causal_assessment.csv`
+- `DAY8_REPORT.md`
+- `08_treatment_outcome_analysis.ipynb`
+
+**Status:** Days 1–8 completed.
 
 ## 🔍 Key Observations
 

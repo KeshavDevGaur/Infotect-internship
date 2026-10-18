@@ -1,0 +1,5 @@
+integration,original_rows,integrated_rows,rows_preserved
+Training + Campaigns,78369,78369,True
+Training + Campaigns + Customers,78369,78369,True
+Coupon Mapping + Items,92663,92663,True
+Transactions + Customers,1324566,1324566,True

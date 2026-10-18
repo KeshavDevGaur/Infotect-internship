@@ -1,0 +1,7 @@
+category,variable,dataset,status
+Potential outcome,redemption_status,train.csv,Observed redemption outcome
+Potential treatment,coupon_discount,customer_transaction_data.csv,Recorded transaction discount; treatment role unverified
+Potential treatment,other_discount,customer_transaction_data.csv,Recorded transaction discount; treatment role unverified
+Potential covariate,customer_id,Multiple datasets,Identifier; not automatically a useful model feature
+Potential covariate,campaign_id,train.csv / campaign_data.csv,Identifier; campaign characteristics require inspection
+Potential covariate,item_id,customer_transaction_data.csv / item_data.csv,Identifier; item characteristics require inspection

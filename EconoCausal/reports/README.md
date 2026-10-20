@@ -16,6 +16,7 @@ The reports document dataset inspection, data quality analysis, campaign redempt
 | 6 | `DAY6_REPORT.md` | Transaction and discount analysis | Completed |
 | 7 | `DAY7_REPORT.md` | Dataset integration and causal feasibility investigation | Completed |
 | 8 | `DAY7_REPORT.md` | Preliminary treatment and outcome assessment, discount investigation, and causal feasibility | Completed |
+| 9 | `DAY9_REPORT.md` | Campaign distribution, redemption analysis, and exposure investigation | Completed |
 
 ## CSV Analysis Outputs
 
@@ -56,6 +57,11 @@ The reports document dataset inspection, data quality analysis, campaign redempt
 - `DAY8_REPORT.md` — Documents the preliminary treatment and outcome investigation.
 - `day08_causal_assessment.csv` — Summarizes candidate treatment, outcome, identifier, and covariate variables.
 
+### Day 9 — Campaign Exposure Analysis
+
+- `day09_campaign_counts.csv`
+- `day09_campaign_redemption.csv`
+
 
 ## Purpose of These Reports
 
@@ -84,4 +90,4 @@ Before applying Double Machine Learning, the project must define a defensible tr
 
 **Project:** EconoCausal — Dynamic Pricing via Double Machine Learning  
 **Organization:** Infotact Solutions  
-**Progress:** Days 1–8 completed
+**Progress:** Days 1–9 completed

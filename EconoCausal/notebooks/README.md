@@ -16,6 +16,7 @@ The notebooks document dataset inspection, data quality checks, campaign analysi
 | 6 | `06_transaction_discount_analysis.ipynb` | Transaction patterns, discount variables, missing values, and duplicates | Completed |
 | 7 | `07_dataset_integration.ipynb` | Dataset integration, merge validation, and causal-variable investigation | Completed |
 | 8 | `08_treatment_outcome_analysis.ipynb` | Preliminary treatment and outcome assessment, discount investigation, and causal feasibility | Completed |
+| 9 | `09_campaign_exposure_analysis.ipynb` | Campaign distribution, redemption rates, customer coverage, and exposure investigation | Completed |
 
 ## Topics Covered
 

@@ -6,23 +6,23 @@
 
 EconoCausal is a data analysis and causal inference project focused on marketing campaigns, coupon redemption, customer demographics, and transaction discounts.
 
-The project uses the AmExpert 2019 Marketing Campaign dataset to explore customer behavior, validate relationships between datasets, and investigate whether the available data can support a defensible causal analysis.
+The project uses the **AmExpert 2019 Marketing Campaign dataset** to investigate customer behavior, validate relationships between datasets, and assess whether the available data can support a defensible causal analysis.
 
-The long-term objective is to assess whether Double Machine Learning (DML) can be applied to estimate a meaningful causal effect, provided that the treatment, outcome, covariates, and identification assumptions can be established.
+The long-term objective is to investigate whether Double Machine Learning (DML) can estimate a meaningful causal effect, provided that the treatment, outcome, covariates, and identification assumptions can be established.
 
 ## 🎯 Project Objectives
 
 - Understand the structure of the available datasets.
 - Identify missing values, duplicate records, and data-quality issues.
-- Validate relationships between related datasets.
+- Validate relationships between datasets.
 - Analyze coupon redemption patterns across campaigns.
-- Investigate customer demographics and coupon-item relationships.
-- Explore transaction and discount information.
-- Integrate datasets while validating join relationships.
+- Explore customer demographics and coupon-item relationships.
+- Investigate transaction and discount information.
+- Integrate related datasets and validate join relationships.
 - Investigate potential treatment and outcome variables.
 - Analyze campaign distributions and redemption rates.
-- Assess whether campaign exposure can be established.
-- Evaluate the feasibility of causal inference before modeling.
+- Examine customer-campaign and coupon-campaign relationships.
+- Assess whether the available data supports meaningful causal analysis.
 
 ## 📊 Dataset Information
 
@@ -74,7 +74,8 @@ Infotect-internship/
     │   ├── 06_transaction_discount_analysis.ipynb
     │   ├── 07_dataset_integration.ipynb
     │   ├── 08_treatment_outcome_analysis.ipynb
-    │   └── 09_campaign_exposure_analysis.ipynb
+    │   ├── 09_campaign_exposure_analysis.ipynb
+    │   └── 10_customer_campaign_relationships.ipynb
     └── reports/
         ├── README.md
         ├── DAY1_REPORT.md
@@ -86,6 +87,7 @@ Infotect-internship/
         ├── DAY7_REPORT.md
         ├── DAY8_REPORT.md
         ├── DAY9_REPORT.md
+        ├── DAY10_REPORT.md
         ├── day01_dataset_summary.csv
         ├── day02_duplicate_analysis.csv
         ├── day02_missing_values.csv
@@ -107,10 +109,14 @@ Infotect-internship/
         ├── day07_causal_variable_summary.csv
         ├── day08_causal_assessment.csv
         ├── day09_campaign_counts.csv
-        └── day09_campaign_redemption.csv
+        ├── day09_campaign_redemption.csv
+        ├── day10_customer_campaign_counts.csv
+        ├── day10_campaign_coupon_summary.csv
+        ├── day10_coupon_campaign_counts.csv
+        └── day10_relationship_validation.csv
 ```
 
-*This structure describes the intended organization. Ensure filenames match the files actually committed to GitHub.*
+*This structure describes the intended organization. Ensure that the filenames match the files actually committed to GitHub.*
 
 ## 📅 Development Progress
 
@@ -125,6 +131,7 @@ Infotect-internship/
 | Day 7 | Dataset integration and causal-variable investigation | Completed |
 | Day 8 | Preliminary treatment and outcome assessment | Completed |
 | Day 9 | Campaign distribution, redemption analysis, and exposure investigation | Completed |
+| Day 10 | Customer-campaign relationships and coupon distribution analysis | Completed |
 
 ## 🔍 Work Completed
 
@@ -132,8 +139,8 @@ Infotect-internship/
 
 - Loaded and inspected the available datasets.
 - Examined dataset dimensions and columns.
-- Generated a dataset summary.
-- Established the initial project structure.
+- Generated an initial dataset summary.
+- Established the project structure.
 
 **Output:** `day01_dataset_summary.csv`
 
@@ -226,12 +233,11 @@ Infotect-internship/
 
 ### Day 9 — Campaign Exposure Analysis
 
-- Analyzed the number of training records per campaign.
+- Analyzed training records associated with each campaign.
 - Counted unique coupons and customers per campaign.
 - Calculated campaign-level redemption counts and rates.
-- Inspected training and campaign dataset columns.
 - Investigated customer demographic coverage.
-- Examined whether the available columns establish campaign exposure.
+- Examined whether the available data establishes campaign exposure.
 - Exported campaign analysis summaries.
 
 **Outputs:**
@@ -239,17 +245,35 @@ Infotect-internship/
 - `day09_campaign_redemption.csv`
 - `DAY9_REPORT.md`
 
+### Day 10 — Customer-Campaign Relationship Analysis
+
+- Analyzed the number of campaigns associated with each customer.
+- Investigated coupon distribution across campaigns.
+- Examined how many campaigns each coupon appears in.
+- Validated customer-campaign combinations.
+- Checked duplicate customer-campaign-coupon combinations.
+- Validated training identifier uniqueness.
+- Exported relationship analysis results.
+
+**Outputs:**
+- `day10_customer_campaign_counts.csv`
+- `day10_campaign_coupon_summary.csv`
+- `day10_coupon_campaign_counts.csv`
+- `day10_relationship_validation.csv`
+- `DAY10_REPORT.md`
+
 ## 📈 Key Observations
 
 - Coupon redemption is a rare event in the training dataset.
 - Some customer demographic fields contain substantial missing values.
 - Dataset integration requires careful validation of join keys and relationship cardinality.
 - A coupon can map to multiple items, so coupon-item joins can increase row counts.
-- Campaigns may differ in record counts, coupon counts, customer counts, and observed redemption rates.
-- Customer demographic data does not necessarily cover every customer in the training dataset.
-- Recorded transaction discounts do not automatically represent assigned treatments.
+- Campaigns can differ in record counts, coupon counts, customer counts, and observed redemption rates.
+- Customers and coupons may appear in multiple campaign-related records.
+- Duplicate customer-campaign combinations do not automatically indicate data errors.
+- Transaction discounts do not automatically represent assigned treatments.
 - Campaign identifiers alone do not establish randomized assignment or prove customer exposure.
-- Differences in observed redemption rates do not, by themselves, demonstrate causal effects.
+- Observed differences and correlations do not, by themselves, demonstrate causal effects.
 
 ## 🧠 Causal Inference Preparation
 
@@ -271,13 +295,13 @@ Relevant pre-treatment characteristics that may help account for confounding.
 
 ### 4. Identification Assumptions
 
-A defensible explanation of why the available data can identify the intended causal effect.
+A defensible explanation of how the causal effect can be identified from the available data.
 
 ### 5. Data Suitability
 
-Sufficient information to define treatment exposure, compare relevant conditions, and evaluate possible sources of bias.
+Sufficient information to define treatment exposure, compare relevant conditions, and evaluate potential sources of bias.
 
-**Important:** The treatment definition remains under investigation. Recorded transaction discounts have not been established as treatment assignments for all customers. No causal effect should be claimed without a defensible identification strategy.
+**Important:** Treatment assignment remains under investigation. Recorded transaction discounts have not been established as treatment assignments for all customers. No causal effect should be claimed without a defensible identification strategy.
 
 ## 📂 Project Documentation
 
@@ -287,12 +311,12 @@ Sufficient information to define treatment exposure, compare relevant conditions
 
 ## 🚀 Next Steps
 
-- Investigate the relationship between campaign assignments, coupons, customers, and redemption records.
+- Investigate the relationship between campaigns, coupons, customers, and redemption records.
 - Determine whether campaign exposure can be established reliably.
 - Evaluate whether a defensible treatment and comparison group can be defined.
 - Identify suitable pre-treatment covariates.
 - Investigate potential confounding and selection bias.
-- Document the limitations of the available observational data.
+- Document limitations in the available observational data.
 - Select an appropriate causal estimation strategy only if the data supports the research question.
 - Implement and evaluate a causal model if the required assumptions and data are defensible.
 
@@ -303,7 +327,7 @@ Sufficient information to define treatment exposure, compare relevant conditions
 - **Domain:** Data Science and Causal Inference
 - **Primary Language:** Python
 - **Dataset:** AmExpert 2019 Marketing Campaign
-- **Progress:** Days 1–9 completed
+- **Progress:** Days 1–10 completed
 
 ---
 

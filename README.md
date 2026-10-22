@@ -1,334 +1,308 @@
 # EconoCausal — Dynamic Pricing via Double Machine Learning
 
-### Internship Project | Infotact Solutions
+**Internship Project | Infotact Solutions | Data Science & Causal Inference**
 
 ## 📌 Project Overview
 
-EconoCausal is a data analysis and causal inference project focused on marketing campaigns, coupon redemption, customer demographics, and transaction discounts.
+EconoCausal is a data science project exploring how causal inference and Double Machine Learning (DML) could help businesses evaluate marketing offers and make better discount-related decisions.
 
-The project uses the **AmExpert 2019 Marketing Campaign dataset** to investigate customer behavior, validate relationships between datasets, and assess whether the available data can support a defensible causal analysis.
+Traditional machine learning often identifies patterns between customer characteristics and purchasing behavior. Causal inference aims to answer a different question: **What effect does an intervention have on an outcome?**
 
-The long-term objective is to investigate whether Double Machine Learning (DML) can estimate a meaningful causal effect, provided that the treatment, outcome, covariates, and identification assumptions can be established.
+The project investigates the available marketing campaign, coupon, customer demographic, and transaction datasets to determine whether they can support a defensible causal analysis.
+
+> **Current status:** The project is in the exploratory analysis and causal-feasibility assessment stage. A valid treatment variable and causal effect have not yet been established.
 
 ## 🎯 Project Objectives
 
-- Understand the structure of the available datasets.
-- Identify missing values, duplicate records, and data-quality issues.
-- Validate relationships between datasets.
-- Analyze coupon redemption patterns across campaigns.
-- Explore customer demographics and coupon-item relationships.
-- Investigate transaction and discount information.
-- Integrate related datasets and validate join relationships.
-- Investigate potential treatment and outcome variables.
-- Analyze campaign distributions and redemption rates.
-- Examine customer-campaign and coupon-campaign relationships.
-- Assess whether the available data supports meaningful causal analysis.
+* Inspect and understand the available datasets.
+* Assess data quality, missing values, and duplicate records.
+* Explore customer, campaign, coupon, and transaction relationships.
+* Analyze observed coupon redemption patterns.
+* Identify potential treatment, outcome, and covariate variables.
+* Investigate whether treatment assignment and campaign exposure can be established.
+* Evaluate the assumptions required for Double Machine Learning.
+* Maintain reproducible notebooks, daily reports, and analysis outputs.
 
-## 📊 Dataset Information
+## 🧠 Key Concepts
 
-**Dataset:** AmExpert 2019 Marketing Campaign
+### 1. Treatment (T)
 
-**Source:** [Kaggle — AmExpert 2019 Marketing Campaign](https://www.kaggle.com/competitions/amexpert-2019/data)
+The treatment represents the intervention whose effect we want to estimate, such as an assigned discount or marketing offer.
 
-### Datasets Used
+**Current status:** Treatment assignment has not yet been verified in the available data.
 
-| Dataset | Description |
-|---|---|
-| `train.csv` | Training data containing customer, campaign, coupon, and redemption information |
-| `test_QyjYwdj.csv` | Test dataset for the original competition |
-| `campaign_data.csv` | Campaign-related information |
-| `customer_demographics.csv` | Customer demographic information |
-| `customer_transaction_data.csv` | Historical customer transaction records |
-| `coupon_item_mapping.csv` | Mapping between coupons and items |
-| `item_data.csv` | Item-related information |
-| `sample_submission_Byiv0dS.csv` | Sample submission format for the original competition |
+Transaction-level discount records cannot automatically be interpreted as assigned treatment for every customer.
 
-**Note:** Raw datasets are excluded from Git version control.
+### 2. Outcome (Y)
 
-## 🛠️ Technology Stack
+The training dataset contains `redemption_status`, which indicates whether a coupon was redeemed.
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- JupyterLab
-- GitHub
-- Double Machine Learning (potential future method)
+This is a candidate outcome variable for studying redemption behavior. However, redemption alone does not establish the causal effect of a discount.
 
-## 📁 Project Structure
+### 3. Covariates (X)
+
+Potential covariates include customer demographic characteristics and campaign-related information.
+
+Before modeling, these variables must be checked for:
+
+* Availability and missingness.
+* Relevance to treatment assignment and the outcome.
+* Measurement timing.
+* Whether they were measured before treatment.
+* Potential sources of confounding.
+
+### 4. Double Machine Learning
+
+Double Machine Learning combines machine learning with statistical techniques designed to estimate causal effects while accounting for observed confounders under appropriate assumptions.
+
+Applying DML requires a defensible treatment definition, a suitable outcome, appropriate covariates, and an identification strategy.
+
+The project will proceed to causal modeling only after the available data has been assessed for these requirements.
+
+## 📂 Dataset Overview
+
+The project uses the AmExpert 2019 Marketing Campaign dataset.
+
+The available files include:
+
+| Dataset                         | Description                                            |
+| ------------------------------- | ------------------------------------------------------ |
+| `train.csv`                     | Training records, including coupon redemption outcomes |
+| `test_QyjYwdj.csv`              | Test records                                           |
+| `campaign_data.csv`             | Campaign information                                   |
+| `customer_demographics.csv`     | Customer demographic information                       |
+| `customer_transaction_data.csv` | Historical customer transaction records                |
+| `coupon_item_mapping.csv`       | Relationships between coupons and items                |
+| `item_data.csv`                 | Item-related information                               |
+| `sample_submission_Byiv0dS.csv` | Sample submission format                               |
+
+**Dataset source:** [AmExpert 2019 Marketing Campaign — Kaggle](https://www.kaggle.com/competitions/amexpert-2019/data)
+
+The original data files are stored locally under `data/raw/` and should not be committed to GitHub.
+
+## 📊 Project Progress
+
+| Day | Task                                    | Key Deliverables                                                 | Status    |
+| --- | --------------------------------------- | ---------------------------------------------------------------- | --------- |
+| 1   | Dataset Inspection                      | Initial dataset summary                                          | Completed |
+| 2   | Data Quality Analysis                   | Missing-value and duplicate analysis                             | Completed |
+| 3   | Dataset Relationship Validation         | Relationship and training structure summaries                    | Completed |
+| 4   | Target and Campaign Analysis            | Redemption and campaign summaries                                | Completed |
+| 5   | Customer and Coupon Analysis            | Demographic and coupon-item summaries                            | Completed |
+| 6   | Transaction and Discount Analysis       | Transaction, missing-value, duplicate, and correlation summaries | Completed |
+| 7   | Dataset Integration                     | Integration and causal-variable summaries                        | Completed |
+| 8   | Treatment and Outcome Assessment        | Preliminary causal assessment                                    | Completed |
+| 9   | Campaign Exposure Analysis              | Campaign counts and redemption summaries                         | Completed |
+| 10  | Customer-Campaign Relationship Analysis | Customer-campaign and coupon relationship summaries              | Completed |
+| 11  | Treatment and Outcome Definition        | Preliminary treatment-outcome assessment                         | Completed |
+
+*Progress reflects the work documented in the project workflow. Verify that each notebook and output file is present in the repository.*
+
+## 📁 Repository Structure
 
 ```text
-Infotect-internship/
+EconoCausal/
+│
 ├── README.md
-└── EconoCausal/
-    ├── .gitignore
-    ├── requirements.txt
-    ├── notebooks/
-    │   ├── README.md
-    │   ├── 01_data_inspection.ipynb
-    │   ├── 02_data_quality_analysis.ipynb
-    │   ├── 03_dataset_relationships.ipynb
-    │   ├── 04_target_analysis.ipynb
-    │   ├── 05_customer_coupon_analysis.ipynb
-    │   ├── 06_transaction_discount_analysis.ipynb
-    │   ├── 07_dataset_integration.ipynb
-    │   ├── 08_treatment_outcome_analysis.ipynb
-    │   ├── 09_campaign_exposure_analysis.ipynb
-    │   └── 10_customer_campaign_relationships.ipynb
-    └── reports/
-        ├── README.md
-        ├── DAY1_REPORT.md
-        ├── DAY2_REPORT.md
-        ├── DAY3_REPORT.md
-        ├── DAY4_REPORT.md
-        ├── DAY5_REPORT.md
-        ├── DAY6_REPORT.md
-        ├── DAY7_REPORT.md
-        ├── DAY8_REPORT.md
-        ├── DAY9_REPORT.md
-        ├── DAY10_REPORT.md
-        ├── day01_dataset_summary.csv
-        ├── day02_duplicate_analysis.csv
-        ├── day02_missing_values.csv
-        ├── day03_relationship_validation.csv
-        ├── day03_training_structure.csv
-        ├── day04_campaign_redemption.csv
-        ├── day04_campaign_type_analysis.csv
-        ├── day04_top_campaigns.csv
-        ├── day05_age_redemption.csv
-        ├── day05_marital_redemption.csv
-        ├── day05_income_redemption.csv
-        ├── day05_coupon_item_counts.csv
-        ├── day05_category_counts.csv
-        ├── day06_transaction_summary.csv
-        ├── day06_missing_values.csv
-        ├── day06_duplicate_analysis.csv
-        ├── day06_discount_correlation.csv
-        ├── day07_integration_summary.csv
-        ├── day07_causal_variable_summary.csv
-        ├── day08_causal_assessment.csv
-        ├── day09_campaign_counts.csv
-        ├── day09_campaign_redemption.csv
-        ├── day10_customer_campaign_counts.csv
-        ├── day10_campaign_coupon_summary.csv
-        ├── day10_coupon_campaign_counts.csv
-        └── day10_relationship_validation.csv
+├── .gitignore
+├── requirements.txt
+│
+├── data/
+│   ├── raw/                 # Original datasets; excluded from Git
+│   └── processed/           # Processed data; excluded from Git
+│
+├── notebooks/
+│   ├── README.md
+│   ├── 01_data_inspection.ipynb
+│   ├── 02_data_quality_analysis.ipynb
+│   ├── 03_dataset_relationships.ipynb
+│   ├── 04_target_analysis.ipynb
+│   ├── 05_customer_coupon_analysis.ipynb
+│   ├── 06_transaction_discount_analysis.ipynb
+│   ├── 07_dataset_integration.ipynb
+│   ├── 08_treatment_outcome_analysis.ipynb
+│   ├── 09_campaign_exposure_analysis.ipynb
+│   ├── 10_customer_campaign_relationships.ipynb
+│   └── 11_treatment_outcome_definition.ipynb
+│
+└── reports/
+    ├── README.md
+    ├── DAY1_REPORT.md
+    ├── DAY2_REPORT.md
+    ├── DAY3_REPORT.md
+    ├── DAY4_REPORT.md
+    ├── DAY5_REPORT.md
+    ├── DAY6_REPORT.md
+    ├── DAY7_REPORT.md
+    ├── DAY8_REPORT.md
+    ├── DAY9_REPORT.md
+    ├── DAY10_REPORT.md
+    ├── DAY11_REPORT.md
+    ├── day01_dataset_summary.csv
+    ├── day02_missing_values.csv
+    ├── day02_duplicate_analysis.csv
+    ├── day03_relationship_validation.csv
+    ├── day03_training_structure.csv
+    ├── day04_campaign_redemption.csv
+    ├── day04_campaign_type_analysis.csv
+    ├── day04_top_campaigns.csv
+    ├── day05_age_redemption.csv
+    ├── day05_marital_redemption.csv
+    ├── day05_income_redemption.csv
+    ├── day05_coupon_item_counts.csv
+    ├── day05_category_counts.csv
+    ├── day06_transaction_summary.csv
+    ├── day06_missing_values.csv
+    ├── day06_duplicate_analysis.csv
+    ├── day06_discount_correlation.csv
+    ├── day07_integration_summary.csv
+    ├── day07_causal_variable_summary.csv
+    ├── day08_causal_assessment.csv
+    ├── day09_campaign_counts.csv
+    ├── day09_campaign_redemption.csv
+    ├── day10_customer_campaign_counts.csv
+    ├── day10_campaign_coupon_summary.csv
+    ├── day10_coupon_campaign_counts.csv
+    ├── day10_relationship_validation.csv
+    └── day11_treatment_outcome_assessment.csv
 ```
 
-*This structure describes the intended organization. Ensure that the filenames match the files actually committed to GitHub.*
+*This is the intended structure. Some filenames may need to be adjusted to match the files actually present in your repository.*
 
-## 📅 Development Progress
-
-| Day | Work Completed | Status |
-|---|---|---|
-| Day 1 | Dataset inspection and initial project setup | Completed |
-| Day 2 | Missing-value and duplicate analysis | Completed |
-| Day 3 | Dataset relationship validation | Completed |
-| Day 4 | Target distribution and campaign analysis | Completed |
-| Day 5 | Customer demographics and coupon-item analysis | Completed |
-| Day 6 | Transaction and discount analysis | Completed |
-| Day 7 | Dataset integration and causal-variable investigation | Completed |
-| Day 8 | Preliminary treatment and outcome assessment | Completed |
-| Day 9 | Campaign distribution, redemption analysis, and exposure investigation | Completed |
-| Day 10 | Customer-campaign relationships and coupon distribution analysis | Completed |
-
-## 🔍 Work Completed
+## 🔬 Work Completed
 
 ### Day 1 — Dataset Inspection
 
-- Loaded and inspected the available datasets.
-- Examined dataset dimensions and columns.
-- Generated an initial dataset summary.
-- Established the project structure.
-
-**Output:** `day01_dataset_summary.csv`
+Loaded the available datasets and examined their dimensions, columns, and basic structure.
 
 ### Day 2 — Data Quality Analysis
 
-- Investigated missing values.
-- Identified duplicate records.
-- Examined potential data-quality issues.
-
-**Outputs:**
-- `day02_missing_values.csv`
-- `day02_duplicate_analysis.csv`
+Investigated missing values and duplicate records to identify potential data-quality issues.
 
 ### Day 3 — Dataset Relationship Validation
 
-- Examined potential join keys.
-- Validated relationships between datasets.
-- Investigated unmatched records.
-- Documented the training dataset structure.
-
-**Outputs:**
-- `day03_relationship_validation.csv`
-- `day03_training_structure.csv`
+Inspected dataset keys and validated relationships between training records and supporting datasets.
 
 ### Day 4 — Target and Campaign Analysis
 
-- Analyzed the distribution of `redemption_status`.
-- Investigated campaign-level redemption patterns.
-- Compared campaign types.
-- Identified campaigns with higher observed redemption rates.
-
-**Outputs:**
-- `day04_campaign_redemption.csv`
-- `day04_campaign_type_analysis.csv`
-- `day04_top_campaigns.csv`
+Examined redemption outcomes and explored observed differences across campaigns.
 
 ### Day 5 — Customer and Coupon Analysis
 
-- Examined customer demographic characteristics.
-- Investigated redemption patterns across age groups.
-- Analyzed marital-status and income-related patterns.
-- Examined coupon-item mappings and item categories.
-
-**Outputs:**
-- `day05_age_redemption.csv`
-- `day05_marital_redemption.csv`
-- `day05_income_redemption.csv`
-- `day05_coupon_item_counts.csv`
-- `day05_category_counts.csv`
+Investigated customer demographics, coupon-item mappings, and item-category distributions.
 
 ### Day 6 — Transaction and Discount Analysis
 
-- Inspected historical transaction records.
-- Examined transaction discount variables.
-- Investigated duplicate transaction records.
-- Reviewed missing values and discount correlations.
-- Documented considerations for interpreting transaction data.
-
-**Outputs:**
-- `day06_transaction_summary.csv`
-- `day06_missing_values.csv`
-- `day06_duplicate_analysis.csv`
-- `day06_discount_correlation.csv`
+Explored transaction records, discount-related variables, missingness, duplicate records, and correlations.
 
 ### Day 7 — Dataset Integration
 
-- Integrated training records with campaign information.
-- Integrated customer demographic information.
-- Connected coupon-item mappings with item information.
-- Connected transaction records with customer demographics.
-- Validated merge relationships and row preservation.
-- Investigated variables potentially relevant to causal analysis.
-
-**Outputs:**
-- `day07_integration_summary.csv`
-- `day07_causal_variable_summary.csv`
+Integrated selected datasets and examined merge relationships, row preservation, and potential causal variables.
 
 ### Day 8 — Treatment and Outcome Assessment
 
-- Inspected potential treatment and outcome variables.
-- Investigated discount-related columns.
-- Examined the redemption outcome distribution.
-- Inspected campaign characteristics.
-- Prepared a preliminary causal-variable assessment.
-- Documented uncertainties regarding treatment assignment.
-
-**Outputs:**
-- `day08_causal_assessment.csv`
-- `DAY8_REPORT.md`
+Inspected possible treatment and outcome variables and documented uncertainties in the available information.
 
 ### Day 9 — Campaign Exposure Analysis
 
-- Analyzed training records associated with each campaign.
-- Counted unique coupons and customers per campaign.
-- Calculated campaign-level redemption counts and rates.
-- Investigated customer demographic coverage.
-- Examined whether the available data establishes campaign exposure.
-- Exported campaign analysis summaries.
-
-**Outputs:**
-- `day09_campaign_counts.csv`
-- `day09_campaign_redemption.csv`
-- `DAY9_REPORT.md`
+Examined campaign-level records, redemption rates, and the available evidence concerning campaign exposure.
 
 ### Day 10 — Customer-Campaign Relationship Analysis
 
-- Analyzed the number of campaigns associated with each customer.
-- Investigated coupon distribution across campaigns.
-- Examined how many campaigns each coupon appears in.
-- Validated customer-campaign combinations.
-- Checked duplicate customer-campaign-coupon combinations.
-- Validated training identifier uniqueness.
-- Exported relationship analysis results.
+Investigated customer-campaign relationships, coupon distribution, duplicate combinations, and identifier uniqueness.
 
-**Outputs:**
-- `day10_customer_campaign_counts.csv`
-- `day10_campaign_coupon_summary.csv`
-- `day10_coupon_campaign_counts.csv`
-- `day10_relationship_validation.csv`
-- `DAY10_REPORT.md`
+### Day 11 — Treatment and Outcome Definition
 
-## 📈 Key Observations
+Created a preliminary assessment of the outcome, potential covariates, and identifiers. Documented that a defensible treatment assignment has not yet been verified.
 
-- Coupon redemption is a rare event in the training dataset.
-- Some customer demographic fields contain substantial missing values.
-- Dataset integration requires careful validation of join keys and relationship cardinality.
-- A coupon can map to multiple items, so coupon-item joins can increase row counts.
-- Campaigns can differ in record counts, coupon counts, customer counts, and observed redemption rates.
-- Customers and coupons may appear in multiple campaign-related records.
-- Duplicate customer-campaign combinations do not automatically indicate data errors.
-- Transaction discounts do not automatically represent assigned treatments.
-- Campaign identifiers alone do not establish randomized assignment or prove customer exposure.
-- Observed differences and correlations do not, by themselves, demonstrate causal effects.
+## ⚠️ Causal Inference Considerations
 
-## 🧠 Causal Inference Preparation
+The project distinguishes exploratory findings from causal conclusions.
 
-The project investigates whether Double Machine Learning (DML) is appropriate for the available data.
+Before estimating a causal effect, the following questions must be addressed:
 
-Before estimating a causal effect, the following must be established:
+1. **Treatment definition:** What intervention was assigned, and how is it recorded?
+2. **Exposure:** Can the data establish which customers were eligible for or exposed to the intervention?
+3. **Outcome definition:** What result will be measured, and over what period?
+4. **Covariate timing:** Which characteristics were measured before treatment?
+5. **Confounding:** What factors may influence both treatment assignment and the outcome?
+6. **Identification assumptions:** Can the treatment effect be identified from the available observational data?
+7. **Data coverage:** Are there enough comparable treated and untreated observations?
 
-### 1. Treatment
+Differences in redemption rates do not, by themselves, demonstrate that a discount caused a change in customer behavior.
 
-A clearly defined intervention or exposure whose effect can be evaluated.
+If the available datasets do not support a defensible causal design, this limitation will be documented rather than hidden behind a predictive model.
 
-### 2. Outcome
+## 🛠️ Tools and Technologies
 
-A measurable result associated with the research question. The training dataset contains `redemption_status`, an observed coupon redemption outcome.
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* JupyterLab
+* GitHub
+* CSV-based analysis outputs
 
-### 3. Covariates
+## ▶️ Getting Started
 
-Relevant pre-treatment characteristics that may help account for confounding.
+### 1. Clone or download the repository
 
-### 4. Identification Assumptions
+Open the repository on GitHub and download the project files to your computer.
 
-A defensible explanation of how the causal effect can be identified from the available data.
+### 2. Install dependencies
 
-### 5. Data Suitability
+Open a terminal in the `EconoCausal` directory and run:
 
-Sufficient information to define treatment exposure, compare relevant conditions, and evaluate potential sources of bias.
+```bash
+pip install -r requirements.txt
+```
 
-**Important:** Treatment assignment remains under investigation. Recorded transaction discounts have not been established as treatment assignments for all customers. No causal effect should be claimed without a defensible identification strategy.
+### 3. Prepare the data directory
 
-## 📂 Project Documentation
+Create the following directory if it does not already exist:
 
-- `notebooks/` — Jupyter notebooks containing analysis code.
-- `reports/` — Daily reports and exported CSV summaries.
-- `data/raw/` — Local raw datasets, excluded from version control.
+```text
+EconoCausal/data/raw/
+```
 
-## 🚀 Next Steps
+Obtain the dataset from Kaggle and place the required CSV files in that directory.
 
-- Investigate the relationship between campaigns, coupons, customers, and redemption records.
-- Determine whether campaign exposure can be established reliably.
-- Evaluate whether a defensible treatment and comparison group can be defined.
-- Identify suitable pre-treatment covariates.
-- Investigate potential confounding and selection bias.
-- Document limitations in the available observational data.
-- Select an appropriate causal estimation strategy only if the data supports the research question.
-- Implement and evaluate a causal model if the required assumptions and data are defensible.
+Do not upload the original datasets to GitHub unless you have confirmed that redistribution is permitted.
 
-## 👨‍💻 Project Information
+### 4. Launch JupyterLab
 
-- **Project Name:** EconoCausal
-- **Organization:** Infotact Solutions
-- **Domain:** Data Science and Causal Inference
-- **Primary Language:** Python
-- **Dataset:** AmExpert 2019 Marketing Campaign
-- **Progress:** Days 1–10 completed
+Run:
+
+```bash
+jupyter lab
+```
+
+Open the `notebooks/` directory and execute the notebooks in sequence.
+
+**Note:** Notebook paths assume that the notebooks are run from their intended directory and that the datasets are stored under `data/raw/`.
+
+## 📈 Next Steps
+
+The next stage will focus on:
+
+* Investigating potential treatment-assignment variables.
+* Examining whether campaign eligibility or exposure can be established.
+* Assessing whether the data supports a meaningful treatment comparison.
+* Defining an appropriate outcome and pre-treatment covariates.
+* Documenting the causal identification strategy and its limitations.
+* Deciding whether DML estimation is justified.
+
+Model development and causal effect estimation should follow only after these questions have been addressed.
+
+## 📌 Project Information
+
+* **Project:** EconoCausal — Dynamic Pricing via Double Machine Learning
+* **Organization:** Infotact Solutions
+* **Domain:** Data Science, Machine Learning, and Causal Inference
+* **Current Progress:** Day 11
+* **Current Stage:** Exploratory Data Analysis and Causal Feasibility Assessment
 
 ---
 
-*This project emphasizes reproducible analysis, data validation, transparent assumptions, and responsible interpretation of results.*
+*This project is being developed as an internship learning exercise. All findings and conclusions will be based on verified data and documented assumptions.*

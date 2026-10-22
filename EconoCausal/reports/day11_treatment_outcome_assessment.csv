@@ -1,0 +1,6 @@
+variable_role,variable_name,dataset,current_assessment,status,notes
+Outcome (Y),redemption_status,train,Observed coupon redemption indicator,Candidate,"Measures redemption, not the causal effect of a discount."
+Treatment (T),Not yet identified,To be determined,No verified treatment assignment,Pending validation,Requires evidence of an assigned offer or discount.
+Covariates (X),Customer demographics,customer_demographics,Potential pre-treatment characteristics,Candidate,"Confirm timing, relevance, and missingness before modeling."
+Covariates (X),Campaign characteristics,campaign_data,Potential campaign-level characteristics,Candidate,Verify campaign timing and how customers were assigned.
+Identifiers,"customer_id, campaign_id, coupon_id",Multiple datasets,Keys for connecting records,Requires validation,Identifiers alone do not establish treatment or exposure.

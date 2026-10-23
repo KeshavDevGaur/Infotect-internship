@@ -1,0 +1,7 @@
+question,evidence,assessment,limitation
+Is campaign identity available?,campaign_id exists in campaign_data and train,Available,An identifier does not prove customer exposure.
+Are campaign dates available?,start_date and end_date exist in campaign_data,Available,Dates do not establish which customers received an offer.
+Is campaign type available?,campaign_type contains X and Y,Available,The meaning of X and Y must be verified before interpretation.
+Is coupon redemption recorded?,redemption_status exists in train,Available,"Redemption is an outcome, not treatment assignment."
+Is assigned discount treatment verified?,No verified assignment field established so far,Unresolved,Additional documentation or assignment data may be required.
+Can a causal effect be claimed?,Treatment assignment and identification assumptions remain unverified,Not yet,Do not interpret redemption differences as causal effects.

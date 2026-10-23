@@ -4,13 +4,13 @@
 
 ## 📌 Project Overview
 
-EconoCausal is a data science project exploring how causal inference and Double Machine Learning (DML) could help businesses evaluate marketing offers and make better discount-related decisions.
+EconoCausal explores how causal inference and Double Machine Learning (DML) could help businesses evaluate marketing offers and make better discount-related decisions.
 
-Traditional machine learning often identifies patterns between customer characteristics and purchasing behavior. Causal inference aims to answer a different question: **What effect does an intervention have on an outcome?**
+Traditional machine learning identifies patterns between customer characteristics and purchasing behavior. Causal inference aims to answer a different question: **What effect does an intervention have on an outcome?**
 
-The project investigates the available marketing campaign, coupon, customer demographic, and transaction datasets to determine whether they can support a defensible causal analysis.
+This project investigates marketing campaign, coupon, customer demographic, and transaction datasets to determine whether they can support a defensible causal analysis.
 
-> **Current status:** The project is in the exploratory analysis and causal-feasibility assessment stage. A valid treatment variable and causal effect have not yet been established.
+> **Current status:** Exploratory data analysis and causal-feasibility assessment. A verified treatment assignment and causal effect have not yet been established.
 
 ## 🎯 Project Objectives
 
@@ -20,50 +20,38 @@ The project investigates the available marketing campaign, coupon, customer demo
 * Analyze observed coupon redemption patterns.
 * Identify potential treatment, outcome, and covariate variables.
 * Investigate whether treatment assignment and campaign exposure can be established.
-* Evaluate the assumptions required for Double Machine Learning.
-* Maintain reproducible notebooks, daily reports, and analysis outputs.
+* Evaluate assumptions required for Double Machine Learning.
+* Maintain reproducible notebooks, reports, and analysis outputs.
 
 ## 🧠 Key Concepts
 
 ### 1. Treatment (T)
 
-The treatment represents the intervention whose effect we want to estimate, such as an assigned discount or marketing offer.
+Treatment represents the intervention whose effect we want to estimate, such as an assigned discount or marketing offer.
 
-**Current status:** Treatment assignment has not yet been verified in the available data.
+**Status:** Treatment assignment has not yet been verified in the available data.
 
 Transaction-level discount records cannot automatically be interpreted as assigned treatment for every customer.
 
 ### 2. Outcome (Y)
 
-The training dataset contains `redemption_status`, which indicates whether a coupon was redeemed.
+The training dataset contains `redemption_status`, indicating whether a coupon was redeemed.
 
-This is a candidate outcome variable for studying redemption behavior. However, redemption alone does not establish the causal effect of a discount.
+This is a candidate outcome for studying redemption behavior. It does not independently establish the causal effect of a discount.
 
 ### 3. Covariates (X)
 
-Potential covariates include customer demographic characteristics and campaign-related information.
-
-Before modeling, these variables must be checked for:
-
-* Availability and missingness.
-* Relevance to treatment assignment and the outcome.
-* Measurement timing.
-* Whether they were measured before treatment.
-* Potential sources of confounding.
+Potential covariates include customer demographics and campaign characteristics. Their timing, relevance, missingness, and relationship to treatment assignment must be assessed before modeling.
 
 ### 4. Double Machine Learning
 
-Double Machine Learning combines machine learning with statistical techniques designed to estimate causal effects while accounting for observed confounders under appropriate assumptions.
+Double Machine Learning combines machine learning with statistical techniques for estimating causal effects while accounting for observed confounders under appropriate assumptions.
 
-Applying DML requires a defensible treatment definition, a suitable outcome, appropriate covariates, and an identification strategy.
-
-The project will proceed to causal modeling only after the available data has been assessed for these requirements.
+A defensible DML analysis requires a clearly defined treatment, a suitable outcome, appropriate covariates, and a credible identification strategy.
 
 ## 📂 Dataset Overview
 
 The project uses the AmExpert 2019 Marketing Campaign dataset.
-
-The available files include:
 
 | Dataset                         | Description                                            |
 | ------------------------------- | ------------------------------------------------------ |
@@ -71,14 +59,14 @@ The available files include:
 | `test_QyjYwdj.csv`              | Test records                                           |
 | `campaign_data.csv`             | Campaign information                                   |
 | `customer_demographics.csv`     | Customer demographic information                       |
-| `customer_transaction_data.csv` | Historical customer transaction records                |
+| `customer_transaction_data.csv` | Historical transaction records                         |
 | `coupon_item_mapping.csv`       | Relationships between coupons and items                |
 | `item_data.csv`                 | Item-related information                               |
 | `sample_submission_Byiv0dS.csv` | Sample submission format                               |
 
 **Dataset source:** [AmExpert 2019 Marketing Campaign — Kaggle](https://www.kaggle.com/competitions/amexpert-2019/data)
 
-The original data files are stored locally under `data/raw/` and should not be committed to GitHub.
+The original datasets are stored locally in `data/raw/` and should not be committed to GitHub.
 
 ## 📊 Project Progress
 
@@ -95,14 +83,14 @@ The original data files are stored locally under `data/raw/` and should not be c
 | 9   | Campaign Exposure Analysis              | Campaign counts and redemption summaries                         | Completed |
 | 10  | Customer-Campaign Relationship Analysis | Customer-campaign and coupon relationship summaries              | Completed |
 | 11  | Treatment and Outcome Definition        | Preliminary treatment-outcome assessment                         | Completed |
+| 12  | Treatment Assignment Analysis           | Campaign metadata inspection and treatment-assignment assessment | Completed |
 
-*Progress reflects the work documented in the project workflow. Verify that each notebook and output file is present in the repository.*
+*Progress reflects the work documented in the project workflow. Verify that the notebooks and outputs are present in the repository.*
 
 ## 📁 Repository Structure
 
 ```text
 EconoCausal/
-│
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
@@ -123,7 +111,8 @@ EconoCausal/
 │   ├── 08_treatment_outcome_analysis.ipynb
 │   ├── 09_campaign_exposure_analysis.ipynb
 │   ├── 10_customer_campaign_relationships.ipynb
-│   └── 11_treatment_outcome_definition.ipynb
+│   ├── 11_treatment_outcome_definition.ipynb
+│   └── 12_treatment_assignment_analysis.ipynb
 │
 └── reports/
     ├── README.md
@@ -138,36 +127,11 @@ EconoCausal/
     ├── DAY9_REPORT.md
     ├── DAY10_REPORT.md
     ├── DAY11_REPORT.md
-    ├── day01_dataset_summary.csv
-    ├── day02_missing_values.csv
-    ├── day02_duplicate_analysis.csv
-    ├── day03_relationship_validation.csv
-    ├── day03_training_structure.csv
-    ├── day04_campaign_redemption.csv
-    ├── day04_campaign_type_analysis.csv
-    ├── day04_top_campaigns.csv
-    ├── day05_age_redemption.csv
-    ├── day05_marital_redemption.csv
-    ├── day05_income_redemption.csv
-    ├── day05_coupon_item_counts.csv
-    ├── day05_category_counts.csv
-    ├── day06_transaction_summary.csv
-    ├── day06_missing_values.csv
-    ├── day06_duplicate_analysis.csv
-    ├── day06_discount_correlation.csv
-    ├── day07_integration_summary.csv
-    ├── day07_causal_variable_summary.csv
-    ├── day08_causal_assessment.csv
-    ├── day09_campaign_counts.csv
-    ├── day09_campaign_redemption.csv
-    ├── day10_customer_campaign_counts.csv
-    ├── day10_campaign_coupon_summary.csv
-    ├── day10_coupon_campaign_counts.csv
-    ├── day10_relationship_validation.csv
-    └── day11_treatment_outcome_assessment.csv
+    ├── DAY12_REPORT.md
+    └── [CSV analysis outputs]
 ```
 
-*This is the intended structure. Some filenames may need to be adjusted to match the files actually present in your repository.*
+*This is the intended structure. Adjust filenames to match the files actually present in the repository.*
 
 ## 🔬 Work Completed
 
@@ -177,7 +141,7 @@ Loaded the available datasets and examined their dimensions, columns, and basic 
 
 ### Day 2 — Data Quality Analysis
 
-Investigated missing values and duplicate records to identify potential data-quality issues.
+Investigated missing values and duplicate records.
 
 ### Day 3 — Dataset Relationship Validation
 
@@ -193,7 +157,7 @@ Investigated customer demographics, coupon-item mappings, and item-category dist
 
 ### Day 6 — Transaction and Discount Analysis
 
-Explored transaction records, discount-related variables, missingness, duplicate records, and correlations.
+Explored transaction records, discount-related variables, missingness, duplicates, and correlations.
 
 ### Day 7 — Dataset Integration
 
@@ -201,11 +165,11 @@ Integrated selected datasets and examined merge relationships, row preservation,
 
 ### Day 8 — Treatment and Outcome Assessment
 
-Inspected possible treatment and outcome variables and documented uncertainties in the available information.
+Inspected potential treatment and outcome variables and documented uncertainties in the available information.
 
 ### Day 9 — Campaign Exposure Analysis
 
-Examined campaign-level records, redemption rates, and the available evidence concerning campaign exposure.
+Examined campaign-level records, redemption rates, and evidence concerning campaign exposure.
 
 ### Day 10 — Customer-Campaign Relationship Analysis
 
@@ -213,13 +177,15 @@ Investigated customer-campaign relationships, coupon distribution, duplicate com
 
 ### Day 11 — Treatment and Outcome Definition
 
-Created a preliminary assessment of the outcome, potential covariates, and identifiers. Documented that a defensible treatment assignment has not yet been verified.
+Created a preliminary assessment of the outcome, potential covariates, and identifiers. Documented that a defensible treatment assignment had not been verified.
+
+### Day 12 — Treatment Assignment Analysis
+
+Inspected campaign metadata, examined campaign types and dates, compared observed redemption patterns, and documented the limitations of the available evidence for identifying treatment assignment.
 
 ## ⚠️ Causal Inference Considerations
 
-The project distinguishes exploratory findings from causal conclusions.
-
-Before estimating a causal effect, the following questions must be addressed:
+Before estimating a causal effect, the project must address:
 
 1. **Treatment definition:** What intervention was assigned, and how is it recorded?
 2. **Exposure:** Can the data establish which customers were eligible for or exposed to the intervention?
@@ -246,33 +212,23 @@ If the available datasets do not support a defensible causal design, this limita
 
 ## ▶️ Getting Started
 
-### 1. Clone or download the repository
+### 1. Obtain the project
 
-Open the repository on GitHub and download the project files to your computer.
+Download the repository from GitHub and open the `EconoCausal` directory.
 
 ### 2. Install dependencies
-
-Open a terminal in the `EconoCausal` directory and run:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Prepare the data directory
+### 3. Prepare the datasets
 
-Create the following directory if it does not already exist:
+Place the required CSV files in `data/raw/`.
 
-```text
-EconoCausal/data/raw/
-```
-
-Obtain the dataset from Kaggle and place the required CSV files in that directory.
-
-Do not upload the original datasets to GitHub unless you have confirmed that redistribution is permitted.
+Obtain the dataset from Kaggle and confirm that redistribution is permitted before sharing any raw data.
 
 ### 4. Launch JupyterLab
-
-Run:
 
 ```bash
 jupyter lab
@@ -280,29 +236,25 @@ jupyter lab
 
 Open the `notebooks/` directory and execute the notebooks in sequence.
 
-**Note:** Notebook paths assume that the notebooks are run from their intended directory and that the datasets are stored under `data/raw/`.
+Notebook paths assume that the datasets are stored under `data/raw/` and that notebooks are run from their intended directory.
 
 ## 📈 Next Steps
 
-The next stage will focus on:
-
-* Investigating potential treatment-assignment variables.
-* Examining whether campaign eligibility or exposure can be established.
-* Assessing whether the data supports a meaningful treatment comparison.
-* Defining an appropriate outcome and pre-treatment covariates.
-* Documenting the causal identification strategy and its limitations.
-* Deciding whether DML estimation is justified.
-
-Model development and causal effect estimation should follow only after these questions have been addressed.
+* Investigate the meaning of campaign types.
+* Determine whether customer-level treatment assignment can be established reliably.
+* Examine the available customer-campaign and coupon relationships.
+* Identify suitable pre-treatment covariates.
+* Document the causal identification strategy and its limitations.
+* Decide whether DML estimation is justified.
 
 ## 📌 Project Information
 
 * **Project:** EconoCausal — Dynamic Pricing via Double Machine Learning
 * **Organization:** Infotact Solutions
 * **Domain:** Data Science, Machine Learning, and Causal Inference
-* **Current Progress:** Day 11
+* **Current Progress:** Day 12
 * **Current Stage:** Exploratory Data Analysis and Causal Feasibility Assessment
 
 ---
 
-*This project is being developed as an internship learning exercise. All findings and conclusions will be based on verified data and documented assumptions.*
+*All findings and conclusions should be based on verified data and documented assumptions.*

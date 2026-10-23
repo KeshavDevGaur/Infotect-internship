@@ -170,7 +170,7 @@ EconoCausal/
     ├── DAY10_REPORT.md
     ├── DAY11_REPORT.md
     ├── DAY12_REPORT.md
-    └── [CSV analysis outputs]
+    └── day12_treatment_assignment_assessment.csv
 ```
 
 *This directory structure represents the intended organization. Ensure that each listed file exists in the repository before considering the documentation complete.*

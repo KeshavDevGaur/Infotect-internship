@@ -19,6 +19,7 @@ The notebooks document dataset inspection, data quality analysis, campaign perfo
 | 9   | `09_campaign_exposure_analysis.ipynb`      | Campaign distribution, redemption rates, and exposure investigation               | Completed |
 | 10  | `10_customer_campaign_relationships.ipynb` | Customer-campaign relationships, coupon distribution, and relationship validation | Completed |
 | 11  | `11_treatment_outcome_definition.ipynb`    | Preliminary treatment, outcome, and covariate assessment                          | Completed |
+| 12  | `12_treatment_assignment_analysis.ipynb`   | Campaign metadata inspection and treatment-assignment assessment                  | Completed |
 
 ## 🔍 Notebook Details
 
@@ -209,7 +210,7 @@ The notebooks document dataset inspection, data quality analysis, campaign perfo
 * Examine the observed `redemption_status` distribution.
 * Identify potential covariates and dataset identifiers.
 * Create a preliminary treatment–outcome assessment table.
-* Document the current limitations of causal analysis.
+* Document current limitations of causal analysis.
 
 **Output:**
 
@@ -217,7 +218,28 @@ The notebooks document dataset inspection, data quality analysis, campaign perfo
 
 **Key Learning:**
 
-`redemption_status` is a candidate outcome, but a defensible treatment variable has not yet been established. Customer demographics and campaign characteristics are potential covariates, subject to validation of their timing and relevance. Identifiers alone do not establish treatment assignment or campaign exposure.
+`redemption_status` is a candidate outcome, but a defensible treatment variable has not yet been established. Customer demographics and campaign characteristics are potential covariates, subject to validation of their timing and relevance.
+
+### Day 12 — Treatment Assignment Analysis
+
+**Notebook:** `12_treatment_assignment_analysis.ipynb`
+
+**Objectives:**
+
+* Inspect campaign, training, and coupon-item mapping datasets.
+* Examine campaign identifiers, types, and dates.
+* Search for treatment-, discount-, offer-, and exposure-related columns.
+* Compare observed redemption patterns across campaign types.
+* Create a preliminary treatment-assignment assessment.
+* Document unresolved questions about customer-level treatment assignment.
+
+**Output:**
+
+* `day12_treatment_assignment_assessment.csv`
+
+**Key Learning:**
+
+Campaign metadata can describe campaigns without establishing which customers received an offer. Differences in redemption rates across campaign types are descriptive and do not independently establish a causal effect.
 
 ## 📊 Topics Covered
 
@@ -250,8 +272,8 @@ The notebooks document dataset inspection, data quality analysis, campaign perfo
 * Preliminary treatment and outcome identification
 * Investigation of campaign exposure
 * Examination of potential covariates
+* Treatment-assignment feasibility
 * Assessment of observational data limitations
-* Preliminary evaluation of causal feasibility
 
 ## 📁 Outputs and Reports
 
@@ -289,7 +311,7 @@ Before applying Double Machine Learning, the project must establish:
 * **Project:** EconoCausal — Dynamic Pricing via Double Machine Learning
 * **Organization:** Infotact Solutions
 * **Domain:** Data Science and Causal Inference
-* **Progress:** Days 1–11
+* **Progress:** Days 1–12
 
 ---
 

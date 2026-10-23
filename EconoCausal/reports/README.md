@@ -6,19 +6,20 @@ The reports document dataset inspection, data-quality checks, campaign analysis,
 
 ## 📅 Daily Report Index
 
-| Day | Report            | Description                                             | Status    |
-| --- | ----------------- | ------------------------------------------------------- | --------- |
-| 1   | `DAY1_REPORT.md`  | Dataset inspection and initial summary                  | Completed |
-| 2   | `DAY2_REPORT.md`  | Missing values and duplicate analysis                   | Completed |
-| 3   | `DAY3_REPORT.md`  | Dataset relationships and identifier validation         | Completed |
-| 4   | `DAY4_REPORT.md`  | Target distribution and campaign analysis               | Completed |
-| 5   | `DAY5_REPORT.md`  | Customer demographics and coupon-item analysis          | Completed |
-| 6   | `DAY6_REPORT.md`  | Transaction and discount analysis                       | Completed |
-| 7   | `DAY7_REPORT.md`  | Dataset integration and causal-variable investigation   | Completed |
-| 8   | `DAY8_REPORT.md`  | Preliminary treatment and outcome assessment            | Completed |
-| 9   | `DAY9_REPORT.md`  | Campaign distribution and exposure investigation        | Completed |
-| 10  | `DAY10_REPORT.md` | Customer-campaign relationships and coupon distribution | Completed |
-| 11  | `DAY11_REPORT.md` | Treatment, outcome, and covariate assessment            | Completed |
+| Day | Report            | Description                                                | Status    |
+| --- | ----------------- | ---------------------------------------------------------- | --------- |
+| 1   | `DAY1_REPORT.md`  | Dataset inspection and initial summary                     | Completed |
+| 2   | `DAY2_REPORT.md`  | Missing values and duplicate analysis                      | Completed |
+| 3   | `DAY3_REPORT.md`  | Dataset relationships and identifier validation            | Completed |
+| 4   | `DAY4_REPORT.md`  | Target distribution and campaign analysis                  | Completed |
+| 5   | `DAY5_REPORT.md`  | Customer demographics and coupon-item analysis             | Completed |
+| 6   | `DAY6_REPORT.md`  | Transaction and discount analysis                          | Completed |
+| 7   | `DAY7_REPORT.md`  | Dataset integration and causal-variable investigation      | Completed |
+| 8   | `DAY8_REPORT.md`  | Preliminary treatment and outcome assessment               | Completed |
+| 9   | `DAY9_REPORT.md`  | Campaign distribution and exposure investigation           | Completed |
+| 10  | `DAY10_REPORT.md` | Customer-campaign relationships and coupon distribution    | Completed |
+| 11  | `DAY11_REPORT.md` | Treatment, outcome, and covariate assessment               | Completed |
+| 12  | `DAY12_REPORT.md` | Treatment assignment and causal identification feasibility | Completed |
 
 ## 📊 CSV Analysis Outputs
 
@@ -104,9 +105,15 @@ The reports document dataset inspection, data-quality checks, campaign analysis,
 
 **Purpose:** Documents the preliminary assessment of the outcome variable, potential treatment, possible covariates, identifiers, and unresolved causal-analysis requirements.
 
+### Day 12 — Treatment Assignment Analysis
+
+* `day12_treatment_assignment_assessment.csv`
+
+**Purpose:** Documents campaign metadata findings, potential evidence of treatment assignment, and unresolved questions about customer-level exposure and causal identification.
+
 ## 🎯 Project Objectives
 
-The reporting workflow supports the following project objectives:
+The reporting workflow supports the following objectives:
 
 1. Understand the structure and quality of the available data.
 2. Explore customer, coupon, campaign, and transaction relationships.
@@ -123,6 +130,7 @@ Important distinctions must be maintained:
 
 * Observed coupon redemption does not, by itself, establish the causal effect of a discount.
 * A campaign identifier does not necessarily prove that a customer was exposed to a campaign.
+* Campaign dates do not independently establish customer-level treatment assignment.
 * Transaction discount records do not automatically establish treatment assignment.
 * Differences in redemption rates across campaigns or customer groups may reflect confounding factors.
 * A valid Double Machine Learning analysis requires a clearly defined treatment, outcome, suitable pre-treatment covariates, and defensible identification assumptions.
@@ -145,7 +153,8 @@ EconoCausal/
 │   ├── 08_treatment_outcome_analysis.ipynb
 │   ├── 09_campaign_exposure_analysis.ipynb
 │   ├── 10_customer_campaign_relationships.ipynb
-│   └── 11_treatment_outcome_definition.ipynb
+│   ├── 11_treatment_outcome_definition.ipynb
+│   └── 12_treatment_assignment_analysis.ipynb
 │
 └── reports/
     ├── README.md
@@ -160,6 +169,7 @@ EconoCausal/
     ├── DAY9_REPORT.md
     ├── DAY10_REPORT.md
     ├── DAY11_REPORT.md
+    ├── DAY12_REPORT.md
     └── [CSV analysis outputs]
 ```
 
@@ -180,7 +190,7 @@ EconoCausal/
 * **Project Name:** EconoCausal — Dynamic Pricing via Double Machine Learning
 * **Organization:** Infotact Solutions
 * **Domain:** Data Science and Causal Inference
-* **Documentation Progress:** Days 1–11
+* **Documentation Progress:** Days 1–12
 
 ---
 

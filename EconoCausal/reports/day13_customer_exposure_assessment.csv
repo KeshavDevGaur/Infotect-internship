@@ -1,0 +1,7 @@
+check,finding,causal_implication
+Customer identifier validation,Customer IDs were checked against customer demographics,Identifier matching does not establish treatment exposure
+Campaign identifier validation,Campaign IDs were checked against campaign data,Campaign linkage alone does not establish customer assignment
+Coupon identifier validation,Coupon IDs were checked against coupon-item mapping,Coupon mapping does not prove a customer received a coupon
+Customer-campaign relationships,Customer campaign and coupon counts were analyzed,"Observed relationships are descriptive, not proof of exposure"
+Duplicate combination analysis,24 records belong to repeated customer-campaign-coupon combinations,Repeated combinations require interpretation; they do not establish treatment
+Verified treatment assignment,Not established by the relationship checks alone,Additional evidence of assignment or exposure is required for causal analysis

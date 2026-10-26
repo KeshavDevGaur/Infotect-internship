@@ -2,35 +2,33 @@
 
 ## Project Overview
 
-EconoCausal is a data science and causal inference project exploring marketing campaign data, customer behavior, coupon redemption, and the requirements for estimating treatment effects using Double Machine Learning (DML).
+EconoCausal is a data science and causal inference project exploring customer behavior, marketing campaigns, coupon redemption, and the feasibility of estimating treatment effects using Double Machine Learning (DML).
 
-The project emphasizes identifying defensible treatment and outcome variables, validating data relationships, and distinguishing descriptive associations from causal evidence.
+The project emphasizes data quality, relationship validation, treatment and outcome definition, and the assumptions required for defensible causal inference.
 
 ## Objectives
 
 * Explore and validate the available datasets.
 * Analyze customer, campaign, coupon, and transaction relationships.
-* Investigate coupon redemption patterns.
-* Examine potential treatment and outcome definitions.
-* Assess whether treatment assignment and customer-level exposure can be verified.
-* Establish the assumptions needed for a defensible causal analysis.
+* Investigate coupon redemption and customer behavior.
+* Identify candidate treatment and outcome variables.
+* Assess treatment assignment and customer-level campaign exposure.
+* Evaluate whether the available data supports a defensible causal identification strategy.
 
 ## Dataset
 
 **Dataset:** AmExpert 2019 Marketing Campaign
 
-The project uses the following datasets:
-
-| Dataset                         | Purpose                                        |
-| ------------------------------- | ---------------------------------------------- |
-| `train.csv`                     | Training records and coupon redemption outcome |
-| `test_QyjYwdj.csv`              | Test dataset                                   |
-| `campaign_data.csv`             | Campaign metadata                              |
-| `customer_demographics.csv`     | Customer demographic information               |
-| `customer_transaction_data.csv` | Customer transaction history                   |
-| `coupon_item_mapping.csv`       | Coupon-to-item mapping                         |
-| `item_data.csv`                 | Item metadata                                  |
-| `sample_submission_Byiv0dS.csv` | Sample submission format                       |
+| Dataset                         | Purpose                                 |
+| ------------------------------- | --------------------------------------- |
+| `train.csv`                     | Training records and redemption outcome |
+| `test_QyjYwdj.csv`              | Test dataset                            |
+| `campaign_data.csv`             | Campaign metadata                       |
+| `customer_demographics.csv`     | Customer demographic information        |
+| `customer_transaction_data.csv` | Customer transaction history            |
+| `coupon_item_mapping.csv`       | Coupon-to-item mapping                  |
+| `item_data.csv`                 | Item metadata                           |
+| `sample_submission_Byiv0dS.csv` | Sample submission format                |
 
 Raw datasets are stored locally and excluded from GitHub.
 
@@ -58,40 +56,43 @@ EconoCausal/
 │   ├── 10_customer_campaign_relationships.ipynb
 │   ├── 11_treatment_outcome_definition.ipynb
 │   ├── 12_treatment_assignment_analysis.ipynb
-│   └── 13_customer_exposure_analysis.ipynb
+│   ├── 13_customer_exposure_analysis.ipynb
+│   └── 14_causal_identification_feasibility.ipynb
 └── reports/
     ├── README.md
-    ├── DAY1_REPORT.md through DAY13_REPORT.md
-    └── day13_customer_exposure_assessment.csv
+    ├── DAY1_REPORT.md through DAY14_REPORT.md
+    └── day14_causal_identification_assessment.csv
 ```
 
-*Note: This structure describes the intended organization. Ensure each listed file exists and has been uploaded before treating the listing as a complete inventory.*
+*This is the intended structure. Verify that each listed file exists before treating the listing as a complete inventory.*
 
 ## Progress Tracker
 
-| Day    | Work Completed                                       |
-| ------ | ---------------------------------------------------- |
-| Day 1  | Dataset inspection and initial summary               |
-| Day 2  | Data quality and duplicate analysis                  |
-| Day 3  | Dataset relationship validation                      |
-| Day 4  | Target and campaign redemption analysis              |
-| Day 5  | Customer demographics and coupon analysis            |
-| Day 6  | Transaction and discount analysis                    |
-| Day 7  | Dataset integration and causal variable exploration  |
-| Day 8  | Preliminary causal feasibility assessment            |
-| Day 9  | Campaign exposure investigation                      |
-| Day 10 | Customer-campaign relationship analysis              |
-| Day 11 | Preliminary treatment and outcome definition         |
-| Day 12 | Treatment assignment investigation                   |
-| Day 13 | Customer-level relationships and exposure assessment |
+| Day | Work Completed                                      |
+| --- | --------------------------------------------------- |
+| 1   | Dataset inspection and initial summary              |
+| 2   | Data quality and duplicate analysis                 |
+| 3   | Dataset relationship validation                     |
+| 4   | Target and campaign redemption analysis             |
+| 5   | Customer demographics and coupon analysis           |
+| 6   | Transaction and discount analysis                   |
+| 7   | Dataset integration and causal variable exploration |
+| 8   | Preliminary causal feasibility assessment           |
+| 9   | Campaign exposure investigation                     |
+| 10  | Customer-campaign relationship analysis             |
+| 11  | Treatment and outcome assessment                    |
+| 12  | Treatment assignment investigation                  |
+| 13  | Customer-level relationship and exposure assessment |
+| 14  | Causal identification feasibility assessment        |
 
-## Day 13 Highlights
+## Day 14 Highlights
 
-* Examined customer-level campaign and coupon relationships.
-* Validated customer, campaign, and coupon identifiers.
-* Investigated repeated customer–campaign–coupon combinations.
-* Created `day13_customer_exposure_assessment.csv`.
-* Documented limitations in establishing actual customer-level campaign exposure.
+* Inspected training, campaign, customer demographic, and transaction datasets.
+* Reviewed candidate treatment and outcome variables.
+* Investigated potential confounders and variable timing.
+* Examined available campaign and transaction date information.
+* Documented unresolved questions about treatment assignment and causal identification.
+* Generated `day14_causal_identification_assessment.csv`.
 
 ## Methodology and Tools
 
@@ -103,23 +104,25 @@ EconoCausal/
 
 ## Causal Inference Considerations
 
-Coupon redemption is an observed outcome, not proof of treatment assignment. Similarly, identifier matches and campaign associations do not independently establish that a customer received or was exposed to a particular treatment.
+The `redemption_status` variable is a candidate outcome, but its suitability depends on the causal question.
+
+A verified treatment variable and assignment mechanism have not yet been established. Campaign identifiers, campaign characteristics, coupon redemption, and transaction discounts do not independently establish treatment assignment or actual exposure.
 
 Before estimating causal effects, the project must establish:
 
-1. A clearly defined treatment variable.
-2. A clearly defined outcome.
-3. A defensible treatment-assignment or identification strategy.
-4. Appropriate pre-treatment confounders.
-5. Assumptions required for the proposed causal estimator.
+1. A clearly defined causal question.
+2. A valid treatment variable and its assignment mechanism.
+3. A suitable outcome and measurement period.
+4. Appropriate pre-treatment covariates.
+5. A defensible identification strategy and its assumptions.
 
-The availability of suitable treatment and exposure data remains an open question.
+Potential covariates must be checked for timing and relevance. Post-treatment variables should not be treated as baseline confounders without careful justification.
 
 ## Current Status
 
-**Completed through Day 13:** Initial data exploration, relationship validation, descriptive analysis, and preliminary causal feasibility assessments.
+**Completed through Day 14:** Initial data exploration, data quality checks, relationship validation, descriptive analysis, treatment and outcome investigation, and preliminary causal feasibility assessment.
 
-**Next priority:** Resolve treatment assignment and exposure, then determine whether the available data supports a defensible causal identification strategy.
+**Next priority:** Investigate the evidence needed to establish treatment assignment and determine whether the available data supports a credible causal identification strategy.
 
 ## Data Handling
 

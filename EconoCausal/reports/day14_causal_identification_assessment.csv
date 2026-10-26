@@ -1,0 +1,9 @@
+assessment_area,finding,status
+Treatment definition,A clearly verified treatment variable has not yet been established,Unresolved
+Outcome definition,redemption_status is a candidate observed outcome,Candidate identified
+Treatment assignment,Available identifier and campaign relationships do not establish assignment,Insufficient evidence
+Customer confounders,Demographic variables are potential covariates; timing and relevance require validation,Requires investigation
+Transaction features,Transaction variables require validation of meaning and timing relative to treatment,Requires investigation
+Temporal ordering,Campaign and transaction dates must be interpreted and aligned correctly,Requires investigation
+Causal identification,A defensible assignment mechanism and identification assumptions have not been established,Not established
+Double Machine Learning,Causal effect estimation should wait until treatment and identification are justified,Not ready

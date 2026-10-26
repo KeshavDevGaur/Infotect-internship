@@ -1,55 +1,59 @@
 # EconoCausal — Notebook Documentation
 
-This directory contains the Jupyter notebooks used for data exploration, data quality checks, customer and campaign analysis, and preliminary causal inference investigation.
+This directory contains the Jupyter notebooks used for data exploration, data quality analysis, customer and campaign investigation, and preliminary causal inference assessment.
 
 ## Notebook Index
 
-| Notebook                                   | Description                                                                                         |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| `01_data_inspection.ipynb`                 | Initial dataset inspection and structural overview                                                  |
-| `02_data_quality_analysis.ipynb`           | Missing values, duplicate records, and data quality                                                 |
-| `03_dataset_relationships.ipynb`           | Validation of relationships between datasets                                                        |
-| `04_target_analysis.ipynb`                 | Redemption outcome and campaign analysis                                                            |
-| `05_customer_coupon_analysis.ipynb`        | Customer demographics and coupon relationships                                                      |
-| `06_transaction_discount_analysis.ipynb`   | Transaction patterns and discount-related analysis                                                  |
-| `07_dataset_integration.ipynb`             | Integration of relevant datasets                                                                    |
-| `08_treatment_outcome_analysis.ipynb`      | Preliminary treatment and outcome investigation                                                     |
-| `09_campaign_exposure_analysis.ipynb`      | Campaign-level exposure investigation                                                               |
-| `10_customer_campaign_relationships.ipynb` | Customer-campaign relationships                                                                     |
-| `11_treatment_outcome_definition.ipynb`    | Assessment of potential treatment and outcome definitions                                           |
-| `12_treatment_assignment_analysis.ipynb`   | Investigation of treatment assignment evidence                                                      |
-| `13_customer_exposure_analysis.ipynb`      | Customer-level relationships, identifier validation, repeated combinations, and exposure assessment |
+| Notebook                                     | Description                                          |
+| -------------------------------------------- | ---------------------------------------------------- |
+| `01_data_inspection.ipynb`                   | Initial dataset inspection                           |
+| `02_data_quality_analysis.ipynb`             | Missing values and duplicate analysis                |
+| `03_dataset_relationships.ipynb`             | Dataset relationship validation                      |
+| `04_target_analysis.ipynb`                   | Target and campaign redemption analysis              |
+| `05_customer_coupon_analysis.ipynb`          | Customer demographics and coupon relationships       |
+| `06_transaction_discount_analysis.ipynb`     | Transaction and discount analysis                    |
+| `07_dataset_integration.ipynb`               | Dataset integration and causal variable exploration  |
+| `08_treatment_outcome_analysis.ipynb`        | Preliminary treatment and outcome investigation      |
+| `09_campaign_exposure_analysis.ipynb`        | Campaign-level exposure investigation                |
+| `10_customer_campaign_relationships.ipynb`   | Customer-campaign relationship analysis              |
+| `11_treatment_outcome_definition.ipynb`      | Treatment and outcome assessment                     |
+| `12_treatment_assignment_analysis.ipynb`     | Treatment assignment investigation                   |
+| `13_customer_exposure_analysis.ipynb`        | Customer-level relationships and exposure assessment |
+| `14_causal_identification_feasibility.ipynb` | Causal identification feasibility assessment         |
 
-## Day 13 Summary
+## Day 14 Summary
 
-The Day 13 notebook investigates whether the available datasets establish customer-level campaign exposure.
+The Day 14 notebook evaluates whether the available AmExpert 2019 Marketing Campaign datasets provide sufficient evidence to define a treatment and establish a defensible causal identification strategy.
 
-Tasks include:
+### Tasks Performed
 
-* Loading the relevant datasets.
-* Validating customer, campaign, and coupon identifiers.
-* Summarizing campaign and coupon relationships for each customer.
-* Checking repeated customer–campaign–coupon combinations.
-* Recording the evidence and limitations in a structured assessment.
+* Loaded and inspected relevant datasets.
+* Reviewed candidate treatment and outcome variables.
+* Examined potential confounders and variable timing.
+* Investigated the availability of campaign and transaction dates.
+* Documented unresolved questions about treatment assignment and causal identification.
+* Created a structured feasibility assessment.
 
-## Important Interpretation Note
+## Important Interpretation Notes
 
-Identifier matches and observed customer-campaign relationships do not independently prove treatment assignment or actual exposure.
+* `redemption_status` is a candidate outcome, not proof of treatment assignment.
+* Campaign identifiers and campaign characteristics do not independently establish actual customer exposure.
+* Potential covariates must be evaluated for their timing and relevance.
+* Post-treatment variables should not automatically be used as baseline confounders.
+* Double Machine Learning does not remove the need for a defensible causal identification strategy.
 
-The analyses are exploratory and descriptive. A defensible causal analysis requires a clearly defined treatment, a suitable outcome, and a justified identification strategy.
-
-## Execution
+## Execution Instructions
 
 1. Open JupyterLab.
 2. Navigate to this directory.
-3. Open the relevant notebook.
-4. Run the cells in order.
-5. Confirm that the required local datasets are available in `../data/raw/`.
+3. Open the required notebook.
+4. Run its cells in order.
+5. Confirm that the required datasets are available in `../data/raw/`.
 
 Raw datasets are excluded from GitHub and must be obtained separately.
 
 ## Reproducibility
 
-The notebooks are intended to document the analysis workflow. Outputs and conclusions should be interpreted in light of the data available and the assumptions stated in each notebook.
+Notebooks document the analysis process and its limitations. Interpret the findings according to the evidence available and the assumptions stated in each notebook.
 
-*Note: Ensure every notebook listed above exists in the repository before publishing this index as a complete inventory.*
+*Verify that every listed notebook exists in the repository before treating this index as a complete inventory.*

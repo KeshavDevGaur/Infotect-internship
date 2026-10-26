@@ -2,7 +2,7 @@
 
 This directory contains daily project reports and CSV files generated during the EconoCausal project.
 
-The reports document data exploration, data quality checks, customer and campaign relationships, and preliminary causal inference assessments.
+The reports document data exploration, data quality checks, customer and campaign relationships, treatment assessment, and preliminary causal identification analysis.
 
 ## Daily Reports
 
@@ -21,10 +21,11 @@ The reports document data exploration, data quality checks, customer and campaig
 | `DAY11_REPORT.md` | Treatment and outcome assessment                    |
 | `DAY12_REPORT.md` | Treatment assignment assessment                     |
 | `DAY13_REPORT.md` | Customer-level treatment and exposure investigation |
+| `DAY14_REPORT.md` | Causal identification feasibility assessment        |
 
 ## Analysis Output Files
 
-The directory may contain the following CSV outputs, provided they have been generated and saved.
+The following index describes the expected analytical outputs. Verify that each file exists before treating this list as a complete inventory.
 
 ### Days 1–3: Data Exploration and Quality
 
@@ -64,35 +65,38 @@ The directory may contain the following CSV outputs, provided they have been gen
 * `day10_coupon_campaign_counts.csv`
 * `day10_relationship_validation.csv`
 
-### Days 11–13: Treatment and Exposure Assessment
+### Days 11–14: Treatment and Causal Identification
 
 * `day11_treatment_outcome_assessment.csv`
 * `day12_treatment_assignment_assessment.csv`
 * `day13_customer_exposure_assessment.csv`
+* `day14_causal_identification_assessment.csv`
 
-## Day 13 Summary
+## Day 14 Summary
 
-Day 13 focused on customer-level campaign relationships and the evidence required to establish campaign exposure.
+Day 14 evaluated whether the available datasets provide sufficient evidence for a defensible causal identification strategy.
 
 The analysis:
 
-* Validated customer, campaign, and coupon identifiers.
-* Examined campaign and coupon counts by customer.
-* Investigated repeated customer–campaign–coupon combinations.
-* Recorded the findings in `day13_customer_exposure_assessment.csv`.
+* Inspected candidate treatment and outcome variables.
+* Examined potential confounders and variable timing.
+* Investigated campaign and transaction date information.
+* Documented unresolved questions about treatment assignment.
+* Generated `day14_causal_identification_assessment.csv`.
 
 ## Interpretation and Limitations
 
-The outputs are intended to support transparent analysis and reproducibility.
+These reports document exploratory findings and the current state of the project.
 
-* Identifier matching does not prove treatment assignment.
-* Campaign membership does not necessarily establish actual exposure.
-* Coupon redemption is an observed outcome, not proof that treatment was randomly assigned.
-* Descriptive associations should not be interpreted as causal effects without a defensible identification strategy.
+* Identifier matches do not establish treatment assignment.
+* Campaign associations do not necessarily prove actual customer exposure.
+* Coupon redemption is an observed outcome, not proof of randomized treatment.
+* Candidate covariates require timing and relevance checks.
+* A credible causal estimate requires a clearly defined treatment, an appropriate outcome, and a defensible identification strategy.
 
 ## Data Handling
 
-Raw datasets are excluded from GitHub. CSV reports should contain only the analytical outputs needed to document the project, without unnecessarily exposing sensitive or restricted information.
+Raw datasets are excluded from GitHub. Reports should contain only the analytical outputs necessary to document the project and should not unnecessarily expose sensitive or restricted information.
 
 ## Maintenance
 
@@ -100,5 +104,6 @@ When adding a new project day:
 
 1. Save the corresponding daily report.
 2. Save the generated CSV outputs.
-3. Add the new files to this index.
-4. Verify that the filenames match the actual files in the repository.
+3. Update this index.
+4. Verify filenames and paths.
+5. Confirm that the README accurately reflects the files uploaded to GitHub.

@@ -1,8 +1,8 @@
 # EconoCausal — Reports and Analysis Outputs
 
-This directory contains daily project reports and CSV files generated during the EconoCausal project.
+This directory contains daily project reports and CSV assessment files generated during the EconoCausal project.
 
-The reports document data exploration, data quality checks, customer and campaign relationships, treatment assessment, and preliminary causal identification analysis.
+The reports document data exploration, data quality checks, customer and campaign relationships, treatment assessment, and preliminary causal identification investigations.
 
 ## Daily Reports
 
@@ -19,13 +19,14 @@ The reports document data exploration, data quality checks, customer and campaig
 | `DAY9_REPORT.md`  | Campaign exposure investigation                     |
 | `DAY10_REPORT.md` | Customer-campaign relationship analysis             |
 | `DAY11_REPORT.md` | Treatment and outcome assessment                    |
-| `DAY12_REPORT.md` | Treatment assignment assessment                     |
+| `DAY12_REPORT.md` | Treatment-assignment assessment                     |
 | `DAY13_REPORT.md` | Customer-level treatment and exposure investigation |
 | `DAY14_REPORT.md` | Causal identification feasibility assessment        |
+| `DAY15_REPORT.md` | Treatment-assignment evidence investigation         |
 
 ## Analysis Output Files
 
-The following index describes the expected analytical outputs. Verify that each file exists before treating this list as a complete inventory.
+The following list describes expected outputs. Verify that each file exists before treating this index as a complete inventory.
 
 ### Days 1–3: Data Exploration and Quality
 
@@ -65,34 +66,34 @@ The following index describes the expected analytical outputs. Verify that each 
 * `day10_coupon_campaign_counts.csv`
 * `day10_relationship_validation.csv`
 
-### Days 11–14: Treatment and Causal Identification
+### Days 11–15: Treatment and Causal Identification
 
 * `day11_treatment_outcome_assessment.csv`
 * `day12_treatment_assignment_assessment.csv`
 * `day13_customer_exposure_assessment.csv`
 * `day14_causal_identification_assessment.csv`
+* `day15_treatment_assignment_evidence.csv`
 
-## Day 14 Summary
+## Day 15 Summary
 
-Day 14 evaluated whether the available datasets provide sufficient evidence for a defensible causal identification strategy.
+Day 15 investigated whether the available datasets establish treatment assignment, customer eligibility, and actual campaign exposure.
 
 The analysis:
 
-* Inspected candidate treatment and outcome variables.
-* Examined potential confounders and variable timing.
-* Investigated campaign and transaction date information.
+* Inspected training, campaign, and customer demographic datasets.
+* Examined potentially relevant treatment and exposure columns.
+* Investigated campaign types and campaign-level record counts.
+* Compared redemption rates descriptively across campaign types.
 * Documented unresolved questions about treatment assignment.
-* Generated `day14_causal_identification_assessment.csv`.
+* Generated `day15_treatment_assignment_evidence.csv`.
 
 ## Interpretation and Limitations
 
-These reports document exploratory findings and the current state of the project.
-
 * Identifier matches do not establish treatment assignment.
-* Campaign associations do not necessarily prove actual customer exposure.
+* Campaign membership does not necessarily prove actual customer exposure.
 * Coupon redemption is an observed outcome, not proof of randomized treatment.
-* Candidate covariates require timing and relevance checks.
-* A credible causal estimate requires a clearly defined treatment, an appropriate outcome, and a defensible identification strategy.
+* Campaign-type differences are descriptive unless a defensible causal comparison is established.
+* A credible causal estimate requires a clearly defined treatment, a suitable outcome, and a defensible identification strategy.
 
 ## Data Handling
 
@@ -105,5 +106,5 @@ When adding a new project day:
 1. Save the corresponding daily report.
 2. Save the generated CSV outputs.
 3. Update this index.
-4. Verify filenames and paths.
+4. Verify the filenames and paths.
 5. Confirm that the README accurately reflects the files uploaded to GitHub.

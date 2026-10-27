@@ -1,0 +1,9 @@
+assessment_area,finding,status
+Explicit treatment variable,No verified treatment variable has been established by the current analysis,Unresolved
+Customer eligibility,Customer eligibility for specific campaigns has not been verified,Insufficient evidence
+Campaign delivery or exposure,Campaign membership alone does not prove actual customer exposure,Unverified
+Campaign type,Campaign type is a descriptive characteristic unless its intervention meaning is established,Requires validation
+Redemption outcome,redemption_status records observed redemption and is a candidate outcome,Candidate identified
+Treated-versus-control comparison,A defensible treatment contrast has not yet been established,Unresolved
+Causal interpretation,Differences in observed redemption rates do not independently establish causal effects,Not established
+Double Machine Learning readiness,Treatment assignment and causal identification require further investigation,Not ready

@@ -2,27 +2,28 @@
 
 This directory contains daily project reports and CSV assessment files generated during the EconoCausal project.
 
-The reports document data exploration, data quality checks, customer and campaign relationships, treatment assessment, and preliminary causal identification investigations.
+The reports document dataset exploration, data quality, customer and campaign relationships, treatment assessment, and preliminary causal research design.
 
 ## Daily Reports
 
-| Report            | Description                                         |
-| ----------------- | --------------------------------------------------- |
-| `DAY1_REPORT.md`  | Initial dataset inspection                          |
-| `DAY2_REPORT.md`  | Data quality and duplicate analysis                 |
-| `DAY3_REPORT.md`  | Dataset relationship validation                     |
-| `DAY4_REPORT.md`  | Target and campaign analysis                        |
-| `DAY5_REPORT.md`  | Customer demographics and coupon analysis           |
-| `DAY6_REPORT.md`  | Transaction and discount analysis                   |
-| `DAY7_REPORT.md`  | Dataset integration and causal variable exploration |
-| `DAY8_REPORT.md`  | Preliminary causal feasibility assessment           |
-| `DAY9_REPORT.md`  | Campaign exposure investigation                     |
-| `DAY10_REPORT.md` | Customer-campaign relationship analysis             |
-| `DAY11_REPORT.md` | Treatment and outcome assessment                    |
-| `DAY12_REPORT.md` | Treatment-assignment assessment                     |
-| `DAY13_REPORT.md` | Customer-level treatment and exposure investigation |
-| `DAY14_REPORT.md` | Causal identification feasibility assessment        |
-| `DAY15_REPORT.md` | Treatment-assignment evidence investigation         |
+| Report            | Description                                                 |
+| ----------------- | ----------------------------------------------------------- |
+| `DAY1_REPORT.md`  | Initial dataset inspection                                  |
+| `DAY2_REPORT.md`  | Data quality and duplicate analysis                         |
+| `DAY3_REPORT.md`  | Dataset relationship validation                             |
+| `DAY4_REPORT.md`  | Target and campaign analysis                                |
+| `DAY5_REPORT.md`  | Customer demographics and coupon analysis                   |
+| `DAY6_REPORT.md`  | Transaction and discount analysis                           |
+| `DAY7_REPORT.md`  | Dataset integration and causal variable exploration         |
+| `DAY8_REPORT.md`  | Preliminary causal feasibility assessment                   |
+| `DAY9_REPORT.md`  | Campaign exposure investigation                             |
+| `DAY10_REPORT.md` | Customer-campaign relationship analysis                     |
+| `DAY11_REPORT.md` | Treatment and outcome assessment                            |
+| `DAY12_REPORT.md` | Treatment-assignment assessment                             |
+| `DAY13_REPORT.md` | Customer-level treatment and exposure investigation         |
+| `DAY14_REPORT.md` | Causal identification feasibility assessment                |
+| `DAY15_REPORT.md` | Treatment-assignment evidence investigation                 |
+| `DAY16_REPORT.md` | Dataset documentation and causal research design assessment |
 
 ## Analysis Output Files
 
@@ -66,34 +67,34 @@ The following list describes expected outputs. Verify that each file exists befo
 * `day10_coupon_campaign_counts.csv`
 * `day10_relationship_validation.csv`
 
-### Days 11–15: Treatment and Causal Identification
+### Days 11–16: Treatment and Causal Research Design
 
 * `day11_treatment_outcome_assessment.csv`
 * `day12_treatment_assignment_assessment.csv`
 * `day13_customer_exposure_assessment.csv`
 * `day14_causal_identification_assessment.csv`
 * `day15_treatment_assignment_evidence.csv`
+* `day16_causal_research_design_assessment.csv`
 
-## Day 15 Summary
+## Day 16 Summary
 
-Day 15 investigated whether the available datasets establish treatment assignment, customer eligibility, and actual campaign exposure.
+Day 16 focused on campaign metadata and the requirements for a defensible causal research design.
 
 The analysis:
 
-* Inspected training, campaign, and customer demographic datasets.
-* Examined potentially relevant treatment and exposure columns.
-* Investigated campaign types and campaign-level record counts.
-* Compared redemption rates descriptively across campaign types.
-* Documented unresolved questions about treatment assignment.
-* Generated `day15_treatment_assignment_evidence.csv`.
+* Inspected campaign and training data.
+* Examined campaign types X and Y.
+* Compared observed redemption patterns descriptively.
+* Documented questions about customer eligibility, treatment assignment, and exposure.
+* Generated `day16_causal_research_design_assessment.csv`.
 
 ## Interpretation and Limitations
 
-* Identifier matches do not establish treatment assignment.
+* Campaign identifiers do not independently establish treatment assignment.
 * Campaign membership does not necessarily prove actual customer exposure.
 * Coupon redemption is an observed outcome, not proof of randomized treatment.
 * Campaign-type differences are descriptive unless a defensible causal comparison is established.
-* A credible causal estimate requires a clearly defined treatment, a suitable outcome, and a defensible identification strategy.
+* Causal effect estimation requires a clearly defined treatment, a suitable outcome, and a justified identification strategy.
 
 ## Data Handling
 
@@ -106,5 +107,5 @@ When adding a new project day:
 1. Save the corresponding daily report.
 2. Save the generated CSV outputs.
 3. Update this index.
-4. Verify the filenames and paths.
+4. Verify filenames and paths.
 5. Confirm that the README accurately reflects the files uploaded to GitHub.

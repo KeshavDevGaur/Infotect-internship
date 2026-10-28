@@ -1,0 +1,9 @@
+assessment_area,finding,status
+Campaign metadata,"Campaign identifiers, types, and available dates were inspected",Inspected
+Campaign type interpretation,The meaning of campaign types X and Y requires verification from reliable documentation,Unverified
+Observed redemption,Redemption rates were compared descriptively across campaign types,Descriptive analysis
+Customer assignment,The campaign metadata and descriptive comparison do not establish the assignment mechanism,Unresolved
+Customer eligibility,Eligibility rules have not been established by the current investigation,Unresolved
+Actual campaign exposure,Actual customer-level delivery or exposure requires additional evidence,Unverified
+Treatment definition,A defensible treatment contrast has not yet been established,Unresolved
+Causal research design,The available evidence is insufficient to justify a causal effect estimate at this stage,Further investigation required

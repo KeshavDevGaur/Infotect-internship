@@ -1,0 +1,4 @@
+candidate,potential_role,evidence_available,main_limitation,causal_use_status
+campaign_type,Campaign characteristic,Campaign types X and Y are present in campaign metadata,Their meanings and assignment process are unverified,Not established
+campaign_id,Campaign identifier,Campaign identifiers are available in the datasets,An identifier does not establish treatment exposure,Not a treatment by itself
+redemption_status,Candidate outcome,Redemption status is available in the training data,"It records redemption, not necessarily campaign exposure",Candidate outcome only

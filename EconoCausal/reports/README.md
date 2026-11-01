@@ -2,7 +2,7 @@
 
 This directory contains research reports, analytical summaries, assessment files, and exported results generated during the EconoCausal project.
 
-Each report documents the research activities, findings, assumptions, limitations, and outputs produced during the corresponding project phase.
+Each report documents research activities, findings, assumptions, limitations, and analytical outputs produced during the corresponding project phase.
 
 ## 1. Project Information
 
@@ -12,7 +12,7 @@ Each report documents the research activities, findings, assumptions, limitation
 
 **Dataset:** AmExpert 2019 Marketing Campaign
 
-**Primary Language:** Python
+**Programming Language:** Python
 
 ## 2. Report Organization
 
@@ -22,6 +22,7 @@ Each report documents the research activities, findings, assumptions, limitation
 | Day 17 | `DAY17_REPORT.md` | Treatment definition and identification strategy |
 | Day 18 | `DAY18_REPORT.md` | Dataset documentation and transaction research   |
 | Day 19 | `DAY19_REPORT.md` | Transaction outcome validation                   |
+| Day 20 | `DAY20_REPORT.md` | Transaction measurement and outcome feasibility  |
 
 ## 3. Detailed Report Documentation
 
@@ -46,7 +47,7 @@ Each report documents the research activities, findings, assumptions, limitation
 
 **Objective:**
 
-Establish an initial understanding of the dataset and identify the requirements for developing a defensible causal research design.
+Establish an initial understanding of the dataset and identify requirements for developing a defensible causal research design.
 
 ### Day 17 — Treatment Definition and Identification Strategy
 
@@ -93,7 +94,7 @@ Further investigation is required before defining treatment and control groups f
 
 * Investigated original dataset documentation.
 * Examined campaign and coupon characteristics.
-* Reviewed relevant published research on causal marketing analysis.
+* Reviewed relevant published causal marketing research.
 
 **2. Transaction Data Investigation**
 
@@ -145,7 +146,7 @@ Transaction measurement conventions require further documentation before constru
 
 * Examined statistical distributions.
 * Investigated extreme quantity values.
-* Studied the relationship between quantity and selling price.
+* Studied quantity and selling price relationships.
 * Examined item-level price variation.
 
 **3. Discount Analysis**
@@ -176,7 +177,7 @@ Neither candidate has been established as the actual customer expenditure measur
 * Calculated recorded and adjusted spending candidates.
 * Investigated spending distributions.
 * Identified customers with extreme spending.
-* Analyzed spending concentration among the top 10% of customers.
+* Analyzed spending concentration.
 * Examined transaction frequency and spending relationships.
 
 **6. Validation and Export**
@@ -194,20 +195,87 @@ Customer-level transaction aggregation provides exploratory spending measures, b
 
 Neither preliminary expenditure candidate has yet been validated as a reliable causal outcome.
 
+### Day 20 — Transaction Measurement Verification and Outcome Feasibility
+
+**Report:**
+
+`DAY20_REPORT.md`
+
+**Assessment file:**
+
+* `day20_outcome_feasibility_assessment.csv`
+
+**Work completed:**
+
+**1. Transaction Variable Investigation**
+
+* Investigated original transaction columns.
+* Examined data types.
+* Documented variables requiring verification.
+
+**2. Selling Price and Quantity Investigation**
+
+* Examined frequently observed items.
+* Investigated selling price variation.
+* Studied quantity-price relationships.
+* Examined individual item transaction patterns.
+* Calculated provisional amount-per-quantity measures.
+
+**3. Discount Measurement Investigation**
+
+* Analyzed negative, zero, and positive discount values.
+* Examined discount patterns across products.
+* Compared recorded and adjusted amounts.
+* Investigated negative and zero adjusted amounts.
+
+**4. Product Category Investigation**
+
+* Combined transaction data with item metadata.
+* Compared quantity and selling price relationships.
+* Examined adjusted amounts across categories.
+* Investigated unusual category-level values.
+
+**5. Customer-Level Analysis**
+
+* Aggregated transactions by customer.
+* Investigated customer-level discount impact.
+* Compared customers with and without recorded coupon discounts.
+
+**6. Outcome Feasibility Assessment**
+
+* Evaluated customer-level aggregation.
+* Investigated expenditure measurement limitations.
+* Assessed whether available measures were ready for causal analysis.
+* Documented the final research recommendation.
+
+**Key finding:**
+
+Customer-level expenditure analysis is technically possible, but actual expenditure measurement conventions have not been sufficiently verified.
+
+**Outcome feasibility decision: PARTIALLY FEASIBLE.**
+
+Neither preliminary expenditure candidate has yet been established as a validated causal outcome.
+
+**Conclusion:**
+
+Further transaction documentation and causal research are required before proceeding with Double Machine Learning estimation.
+
 ## 4. Output File Descriptions
 
-| File                                          | Description                                      |
-| --------------------------------------------- | ------------------------------------------------ |
-| `DAY16_REPORT.md`                             | Day 16 research summary                          |
-| `DAY17_REPORT.md`                             | Day 17 research summary                          |
-| `DAY18_REPORT.md`                             | Day 18 research summary                          |
-| `DAY19_REPORT.md`                             | Day 19 research summary                          |
-| `day16_causal_research_design_assessment.csv` | Preliminary causal research assessment           |
-| `day17_treatment_candidate_assessment.csv`    | Evaluation of potential treatment variables      |
-| `day17_causal_identification_assessment.csv`  | Causal identification assessment                 |
-| `day17_causal_research_assessment.csv`        | Overall causal research assessment               |
-| `day18_fuel_item_analysis.csv`                | Analysis of frequently observed Fuel items       |
-| `day19_customer_spending_analysis.csv`        | Customer-level transaction and spending analysis |
+| File                                          | Description                                               |
+| --------------------------------------------- | --------------------------------------------------------- |
+| `DAY16_REPORT.md`                             | Day 16 research summary                                   |
+| `DAY17_REPORT.md`                             | Day 17 research summary                                   |
+| `DAY18_REPORT.md`                             | Day 18 research summary                                   |
+| `DAY19_REPORT.md`                             | Day 19 research summary                                   |
+| `DAY20_REPORT.md`                             | Day 20 research summary                                   |
+| `day16_causal_research_design_assessment.csv` | Preliminary causal research assessment                    |
+| `day17_treatment_candidate_assessment.csv`    | Evaluation of potential treatment variables               |
+| `day17_causal_identification_assessment.csv`  | Causal identification assessment                          |
+| `day17_causal_research_assessment.csv`        | Overall causal research assessment                        |
+| `day18_fuel_item_analysis.csv`                | Analysis of frequently observed Fuel items                |
+| `day19_customer_spending_analysis.csv`        | Customer-level transaction and spending analysis          |
+| `day20_outcome_feasibility_assessment.csv`    | Preliminary customer-level outcome feasibility assessment |
 
 ## 5. Research Documentation Standards
 
@@ -242,7 +310,7 @@ The following issues remain important:
 
 The existence of a redemption variable does not independently establish campaign exposure or treatment assignment.
 
-Similarly, a customer-level spending aggregate does not automatically represent a valid causal outcome.
+Similarly, customer-level spending aggregates do not automatically represent valid causal outcomes.
 
 ## 7. Upcoming Research Reports
 
@@ -250,7 +318,7 @@ Future reports may include:
 
 | Planned Research                | Objective                                                             |
 | ------------------------------- | --------------------------------------------------------------------- |
-| Transaction Variable Validation | Verify the meaning and measurement units of transaction variables     |
+| Transaction Variable Validation | Verify transaction variable definitions and measurement units         |
 | Outcome Feasibility Assessment  | Establish whether customer-level expenditure can be reliably measured |
 | Campaign Exposure Assessment    | Investigate actual campaign exposure                                  |
 | Treatment Assignment Analysis   | Evaluate how customers received campaign offers                       |
@@ -269,22 +337,28 @@ Future reports may include:
 | Treatment definition assessment (Day 17)    | Completed   |
 | Transaction documentation research (Day 18) | Completed   |
 | Transaction outcome validation (Day 19)     | Completed   |
-| Outcome feasibility assessment              | In progress |
-| Causal identification                       | In progress |
+| Outcome feasibility assessment (Day 20)     | Completed   |
+| Final outcome validation                    | In progress |
+| Causal identification                       | Pending     |
+| DML feasibility                             | Pending     |
 | DML estimation                              | Pending     |
 
 ## 9. Conclusion
 
 The reports directory provides a structured record of the EconoCausal research workflow.
 
-The current work has established a foundation for dataset understanding, treatment investigation, transaction analysis, and preliminary customer-level outcome construction.
+The first 20 days established a foundation for dataset understanding, treatment investigation, transaction analysis, and preliminary customer-level outcome construction.
 
-Further documentation and validation are necessary before selecting a reliable causal outcome or proceeding with Double Machine Learning estimation.
+The outcome feasibility assessment concluded that customer-level expenditure analysis is technically possible, but the actual expenditure measurement convention remains insufficiently verified.
+
+The next phase will focus on establishing a defensible treatment, outcome, and identification strategy before proceeding with Double Machine Learning estimation.
 
 ---
 
 **Project:** EconoCausal
 
-**Current Progress:** Day 19 Completed
+**Original Project Plan:** 20 Days
 
-**Next Focus:** Transaction measurement verification and customer-level outcome feasibility.
+**Current Progress:** Day 20 Completed
+
+**Next Focus:** Causal Identification and DML Feasibility

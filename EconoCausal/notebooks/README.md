@@ -2,9 +2,9 @@
 
 This directory contains the Jupyter notebooks developed during the EconoCausal research project.
 
-The notebooks document the complete analytical workflow, including dataset exploration, data preparation, transaction analysis, research design, treatment definition, outcome validation, and causal machine learning feasibility.
+The notebooks document the analytical workflow, including dataset exploration, data preparation, transaction analysis, research design, treatment definition, outcome validation, and causal machine learning feasibility.
 
-## 1. Project Overview
+## 1. Project Information
 
 **Project:** EconoCausal
 
@@ -12,41 +12,37 @@ The notebooks document the complete analytical workflow, including dataset explo
 
 **Dataset:** AmExpert 2019 Marketing Campaign
 
-**Primary Language:** Python
+**Programming Language:** Python
 
 **Environment:** JupyterLab / Jupyter Notebook
 
 ## 2. Notebook Organization
 
-The notebooks are organized chronologically according to the project development timeline.
-
-| Period         | Focus                                                  | Status    |
-| -------------- | ------------------------------------------------------ | --------- |
-| Days 1–15      | Initial dataset exploration, preparation, and analysis | Completed |
-| Day 16         | Dataset documentation and causal design                | Completed |
-| Day 17         | Treatment definition and identification strategy       | Completed |
-| Day 18         | Dataset documentation research                         | Completed |
-| Day 19         | Transaction outcome validation                         | Completed |
-| Day 20 onwards | Further outcome and causal research                    | Upcoming  |
+| Period    | Research Focus                                   | Status    |
+| --------- | ------------------------------------------------ | --------- |
+| Days 1–15 | Initial dataset exploration and preparation      | Completed |
+| Day 16    | Dataset documentation and causal design          | Completed |
+| Day 17    | Treatment definition and identification strategy | Completed |
+| Day 18    | Dataset documentation research                   | Completed |
+| Day 19    | Transaction outcome validation                   | Completed |
+| Day 20    | Transaction measurement and outcome feasibility  | Completed |
 
 ## 3. Detailed Notebook Documentation
 
-### Day 01–15 — Initial Data Analysis
+### Days 01–15 — Initial Data Analysis
 
 These notebooks establish the foundation of the EconoCausal project.
 
-The initial project phase focuses on understanding the dataset, investigating customer and campaign information, preparing analytical data, and conducting exploratory analysis.
-
 **General objectives:**
 
-* Understand the dataset structure.
+* Understand dataset structure.
 * Explore available variables.
 * Perform data inspection and preparation.
 * Investigate customer and transaction information.
 * Conduct exploratory data analysis.
 * Document analytical observations.
 
-Refer to the individual daily notebooks for the detailed implementation and results.
+Refer to the individual daily notebooks for detailed implementation and results.
 
 ### Day 16 — Dataset Documentation and Causal Design
 
@@ -105,7 +101,7 @@ Refer to the individual daily notebooks for the detailed implementation and resu
 
 **Key finding:**
 
-The available dataset does not yet establish actual campaign exposure or a sufficiently defensible treatment assignment mechanism.
+Actual campaign exposure and a sufficiently defensible treatment assignment mechanism have not yet been established.
 
 ### Day 18 — Dataset Documentation Research
 
@@ -157,10 +153,6 @@ The available dataset does not yet establish actual campaign exposure or a suffi
 
 Six frequently observed Fuel items showed relatively consistent price-to-quantity ratios, with a mean of approximately 0.086807.
 
-**Conclusion:**
-
-Transaction measurement conventions require further investigation before constructing a reliable customer expenditure outcome.
-
 ### Day 19 — Transaction Outcome Validation
 
 **Notebook:**
@@ -180,25 +172,23 @@ Transaction measurement conventions require further investigation before constru
 
 **1. Transaction Data Inspection**
 
-* Inspected column names and data types.
-* Checked missing values.
-* Checked duplicate records.
+* Inspected columns and data types.
+* Checked missing values and duplicate records.
 * Investigated transaction date coverage.
 
 **2. Quantity and Selling Price Analysis**
 
 * Examined statistical distributions.
 * Investigated extreme quantity values.
-* Studied the relationship between quantity and selling price.
-* Calculated provisional price-per-quantity ratios.
-* Investigated item-level price variation.
+* Studied quantity and selling price relationships.
+* Examined item-level price variation.
 
 **3. Discount Analysis**
 
-* Examined `other_discount`.
-* Examined `coupon_discount`.
-* Investigated discount combinations.
-* Compared recorded and discount-adjusted amounts.
+* Investigated `other_discount`.
+* Investigated `coupon_discount`.
+* Analyzed discount combinations.
+* Compared recorded and adjusted amounts.
 
 **4. Customer-Level Aggregation**
 
@@ -213,20 +203,18 @@ Created customer-level measures:
 
 **5. Customer Spending Analysis**
 
-* Examined customer-level spending distributions.
+* Examined spending distributions.
 * Investigated customers with extreme spending.
 * Calculated spending percentiles.
-* Investigated spending concentration among the top 10% of customers.
+* Investigated spending concentration.
 * Analyzed transaction frequency and spending.
-* Compared spending across transaction-frequency groups.
 
 **6. Outcome Validation**
 
 * Compared expenditure candidates.
 * Checked missing values.
 * Investigated zero and negative values.
-* Exported customer-level analysis.
-* Verified the exported CSV.
+* Exported and verified customer-level analysis.
 
 **Output:**
 
@@ -234,26 +222,91 @@ Created customer-level measures:
 
 **Key finding:**
 
-Customer-level aggregation provides exploratory spending measures. However, the exact definitions of quantity, selling price, and discounts require further validation.
+Customer-level aggregation provides exploratory spending measures, but transaction measurement conventions require further verification.
 
-**Conclusion:**
+### Day 20 — Transaction Measurement Verification and Outcome Feasibility
 
-Neither preliminary expenditure candidate has yet been validated as the actual customer expenditure outcome.
+**Notebook:**
+
+`20_transaction_measurement_outcome_feasibility.ipynb`
+
+**Objectives:**
+
+* Investigate transaction variable definitions.
+* Examine selling price and quantity relationships.
+* Verify discount measurement patterns.
+* Compare expenditure candidates.
+* Investigate category-level transaction patterns.
+* Assess customer-level outcome feasibility.
+
+**Work completed:**
+
+**1. Transaction Variable Investigation**
+
+* Inspected original transaction columns.
+* Examined data types.
+* Documented variables requiring verification.
+
+**2. Selling Price and Quantity Investigation**
+
+* Examined frequently observed items.
+* Investigated selling price variation.
+* Studied quantity-price relationships.
+* Examined individual item patterns.
+* Calculated provisional amount-per-quantity measures.
+
+**3. Discount Measurement Investigation**
+
+* Analyzed negative, zero, and positive discount values.
+* Examined discount patterns across products.
+* Compared recorded and adjusted amounts.
+* Investigated negative and zero adjusted amounts.
+
+**4. Product Category Investigation**
+
+* Combined transaction data with item metadata.
+* Compared quantity and selling price relationships.
+* Examined adjusted amounts across categories.
+* Investigated unusual category-level values.
+
+**5. Customer-Level Analysis**
+
+* Aggregated transactions by customer.
+* Investigated customer-level discount impact.
+* Compared customers with and without recorded coupon discounts.
+
+**6. Outcome Feasibility Assessment**
+
+* Evaluated customer-level aggregation.
+* Investigated expenditure measurement limitations.
+* Assessed whether available measures were ready for causal analysis.
+* Documented the final research recommendation.
+
+**Expected outputs:**
+
+* `DAY20_REPORT.md`
+* `day20_outcome_feasibility_assessment.csv`
+
+**Key finding:**
+
+Customer-level expenditure analysis is technically possible, but actual expenditure measurement conventions have not been sufficiently verified.
+
+**Outcome feasibility decision: PARTIALLY FEASIBLE.**
+
+Neither preliminary expenditure candidate is yet a validated causal outcome.
 
 ## 4. Notebook Execution Guidelines
-
-Follow these guidelines when working with the notebooks:
 
 1. Execute notebook cells sequentially.
 2. Import required libraries before using them.
 3. Use relative file paths.
-4. Keep the original raw datasets unchanged.
-5. Document important analytical findings.
+4. Keep original raw datasets unchanged.
+5. Document important findings.
 6. Include appropriate visualizations.
-7. Validate calculations before interpreting results.
-8. Export important analytical outputs into the reports directory.
-9. Avoid removing extreme values without investigation.
-10. Clearly distinguish descriptive analysis from causal conclusions.
+7. Validate calculations before interpretation.
+8. Export analytical results into the reports directory.
+9. Investigate extreme values before removing them.
+10. Separate descriptive analysis from causal conclusions.
 
 ## 5. Technologies and Libraries
 
@@ -268,18 +321,17 @@ Follow these guidelines when working with the notebooks:
 
 ## 6. Expected Future Notebook Work
 
-Upcoming notebooks will investigate:
+The next research phase will focus on:
 
-* Transaction variable definitions.
-* Quantity and selling price measurement.
-* Discount calculation conventions.
-* Customer-level outcome feasibility.
-* Campaign exposure.
-* Treatment assignment.
-* Confounding variables.
+* Original transaction variable documentation.
+* Customer-level outcome validation.
+* Campaign exposure investigation.
+* Treatment assignment mechanism.
+* Confounding variable identification.
 * Treatment overlap.
+* Causal identification strategy.
 * Double Machine Learning feasibility.
-* Causal effect estimation.
+* Causal effect estimation, if justified.
 * Robustness and sensitivity analysis.
 
 ## 7. Important Research Note
@@ -288,18 +340,20 @@ Double Machine Learning should not be applied merely because treatment and outco
 
 A defensible causal analysis requires:
 
-* A clearly defined treatment.
-* A properly measured outcome.
-* A justified identification strategy.
+* Clearly defined treatment.
+* Properly measured outcome.
+* Justified identification strategy.
 * Appropriate confounder adjustment.
 * Sufficient treatment overlap.
 
-The notebooks document these requirements as part of the research workflow.
+The notebooks document these requirements throughout the project.
 
 ---
 
 **Project:** EconoCausal
 
-**Current Progress:** Day 19 Completed
+**Original Project Plan:** 20 Days
 
-**Next Focus:** Transaction measurement verification and outcome feasibility assessment.
+**Current Progress:** Day 20 Completed
+
+**Next Focus:** Causal Identification and DML Feasibility

@@ -5,22 +5,36 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-yellow)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange)
-![Status](https://img.shields.io/badge/Progress-Day%2019-success)
+![Project Status](https://img.shields.io/badge/Progress-Day%2020-success)
 
 ## 1. Project Overview
 
 EconoCausal is a data science research project focused on understanding customer purchasing behaviour, promotional campaigns, discounts, and the feasibility of causal analysis using the AmExpert 2019 Marketing Campaign dataset.
 
-The project investigates how promotional campaigns and discounts may influence customer purchasing behaviour.
+The project investigates whether promotional campaigns and coupon-based discounts influence customer purchasing behaviour and expenditure.
 
 The long-term objective is to evaluate whether Double Machine Learning (DML) can provide reliable estimates of promotional campaign effects.
 
-The project emphasizes data quality, treatment definition, outcome construction, and causal identification before model estimation.
+Unlike conventional predictive modelling, this project focuses on understanding causal relationships rather than simply identifying correlations.
 
-## 2. Research Objectives
+## 2. Main Research Goal
 
-* Explore customer purchasing behaviour.
-* Understand promotional campaign characteristics.
+The primary research question is:
+
+**Do promotional campaigns and coupon discounts actually cause changes in customer purchasing behaviour and expenditure?**
+
+The project aims to investigate:
+
+* Whether promotional offers increase customer spending.
+* Whether coupon campaigns influence purchasing behaviour.
+* Which customers respond to promotional interventions.
+* Whether discounts generate additional purchasing activity.
+* How businesses can improve promotional strategies using causal insights.
+
+## 3. Research Objectives
+
+* Understand customer purchasing behaviour.
+* Explore promotional campaign characteristics.
 * Analyze coupon and transaction information.
 * Investigate customer-level spending patterns.
 * Identify potential treatment and outcome variables.
@@ -29,7 +43,7 @@ The project emphasizes data quality, treatment definition, outcome construction,
 * Assess the feasibility of Double Machine Learning.
 * Develop a reproducible causal research workflow.
 
-## 3. Dataset Information
+## 4. Dataset Information
 
 **Dataset:** AmExpert 2019 Marketing Campaign
 
@@ -50,7 +64,7 @@ The dataset contains customer, campaign, coupon, product, and transaction inform
 
 **Note:** Raw datasets are stored locally in `data/raw/` and are not uploaded to GitHub.
 
-## 4. Project Structure
+## 5. Project Structure
 
 ```text
 EconoCausal/
@@ -65,6 +79,7 @@ EconoCausal/
 │   ├── 17_treatment_definition_identification_strategy.ipynb
 │   ├── 18_dataset_documentation_research.ipynb
 │   ├── 19_transaction_outcome_validation.ipynb
+│   ├── 20_transaction_measurement_outcome_feasibility.ipynb
 │   └── README.md
 │
 ├── reports/
@@ -72,24 +87,30 @@ EconoCausal/
 │   ├── DAY17_REPORT.md
 │   ├── DAY18_REPORT.md
 │   ├── DAY19_REPORT.md
+│   ├── DAY20_REPORT.md
 │   ├── day16_causal_research_design_assessment.csv
 │   ├── day17_treatment_candidate_assessment.csv
 │   ├── day17_causal_identification_assessment.csv
 │   ├── day17_causal_research_assessment.csv
 │   ├── day18_fuel_item_analysis.csv
 │   ├── day19_customer_spending_analysis.csv
+│   ├── day20_outcome_feasibility_assessment.csv
 │   └── README.md
 │
 └── README.md
 ```
 
-## 5. Research Progress
+## 6. Research Progress
 
 ### Phase 1 — Initial Data Analysis (Days 1–15)
 
-Completed the initial project workflow, including dataset exploration, data preparation, descriptive analysis, and preliminary research.
+Completed the initial project workflow, including:
 
-The first 15 days established the foundation for understanding the dataset and investigating customer and campaign information.
+* Dataset exploration.
+* Data inspection and preparation.
+* Customer and campaign investigation.
+* Preliminary descriptive analysis.
+* Initial research documentation.
 
 ### Phase 2 — Causal Research Design
 
@@ -101,7 +122,7 @@ The first 15 days established the foundation for understanding the dataset and i
 * Investigated available variables.
 * Studied potential causal research questions.
 * Assessed preliminary causal research feasibility.
-* Documented research design limitations.
+* Documented research limitations.
 
 **Output:**
 
@@ -112,8 +133,8 @@ The first 15 days established the foundation for understanding the dataset and i
 **Work completed:**
 
 * Evaluated potential treatment variables.
-* Investigated treatment assignment and exposure.
-* Examined possible outcome variables.
+* Investigated treatment assignment and campaign exposure.
+* Examined potential outcome variables.
 * Assessed causal identification requirements.
 * Documented unresolved assumptions.
 
@@ -125,19 +146,19 @@ The first 15 days established the foundation for understanding the dataset and i
 
 **Key finding:**
 
-The available information does not yet establish actual campaign exposure or a sufficiently defensible treatment assignment mechanism.
+Actual campaign exposure and a sufficiently defensible treatment assignment mechanism have not yet been established.
 
 #### Day 18 — Dataset Documentation Research
 
 **Work completed:**
 
 * Investigated original dataset documentation.
-* Studied transaction variable distributions.
+* Studied transaction variables.
 * Examined extreme transaction quantities.
 * Investigated Fuel category transaction patterns.
 * Analyzed frequently observed Fuel items.
 * Compared price-to-quantity ratios.
-* Documented transaction measurement limitations.
+* Documented measurement limitations.
 
 **Output:**
 
@@ -147,42 +168,59 @@ The available information does not yet establish actual campaign exposure or a s
 
 Six frequently observed Fuel items showed relatively consistent price-to-quantity ratios, with a mean of approximately 0.086807.
 
-**Conclusion:**
-
-Transaction measurement conventions require further investigation before constructing a reliable customer expenditure outcome.
-
 #### Day 19 — Transaction Outcome Validation
 
 **Work completed:**
 
 * Inspected transaction columns and data types.
-* Checked missing values and duplicate records.
+* Checked missing values and duplicates.
 * Investigated transaction date coverage.
-* Analyzed quantity and selling price distributions.
+* Analyzed quantity and selling price.
 * Examined other and coupon discounts.
 * Investigated item-level price variation.
 * Compared preliminary expenditure candidates.
 * Aggregated transactions at customer level.
 * Analyzed customer spending distributions.
-* Investigated spending concentration among the top 10% of customers.
-* Examined the relationship between transaction frequency and spending.
+* Investigated spending concentration.
 * Exported and verified customer-level analysis.
 
-**Outputs:**
+**Output:**
 
-* `19_transaction_outcome_validation.ipynb`
 * `day19_customer_spending_analysis.csv`
-* `DAY19_REPORT.md`
 
 **Key finding:**
 
-Customer-level transaction aggregation provides exploratory spending measures. However, the exact definitions of quantity, selling price, and discounts require further validation.
+Customer-level aggregation provides exploratory spending measures, but the exact definitions of quantity, selling price, and discounts require further validation.
 
-**Conclusion:**
+#### Day 20 — Transaction Measurement Verification and Outcome Feasibility
 
-Neither preliminary expenditure candidate has yet been validated as the actual customer expenditure outcome.
+**Work completed:**
 
-## 6. Causal Research Framework
+* Investigated transaction variable definitions.
+* Examined selling price and quantity relationships.
+* Analyzed discount measurement patterns.
+* Compared recorded and adjusted amounts.
+* Investigated product category differences.
+* Examined customer-level discount impact.
+* Compared customers with and without recorded coupon discounts.
+* Assessed customer-level outcome feasibility.
+* Documented the final research recommendation.
+
+**Outputs:**
+
+* `20_transaction_measurement_outcome_feasibility.ipynb`
+* `DAY20_REPORT.md`
+* `day20_outcome_feasibility_assessment.csv`
+
+**Key finding:**
+
+Customer-level expenditure analysis is technically possible, but the actual expenditure measurement convention has not been sufficiently verified.
+
+**Outcome feasibility decision: PARTIALLY FEASIBLE**
+
+Neither preliminary expenditure candidate has yet been established as a validated causal outcome.
+
+## 7. Causal Research Framework
 
 The project follows an important principle:
 
@@ -192,14 +230,14 @@ Before estimating campaign effects, the research must establish:
 
 1. A clearly defined treatment or intervention.
 2. A defensible treatment assignment mechanism.
-3. A properly measured outcome variable.
+3. A properly measured outcome.
 4. Relevant pre-treatment confounders.
 5. Appropriate identification assumptions.
-6. Sufficient data quality and treatment overlap.
+6. Sufficient treatment overlap.
 
 ### Treatment Considerations
 
-The `redemption_status` variable is a potential outcome candidate, but coupon redemption does not establish actual campaign exposure or treatment assignment.
+`redemption_status` is a potential outcome candidate, but coupon redemption does not independently establish campaign exposure or treatment assignment.
 
 Campaign types X and Y are anonymized categories and should not automatically be interpreted as treatment and control groups.
 
@@ -207,92 +245,90 @@ Campaign types X and Y are anonymized categories and should not automatically be
 
 Customer transaction data provides information about purchasing behaviour.
 
-However, the exact meanings of `quantity`, `selling_price`, `other_discount`, and `coupon_discount` must be established before selecting a reliable expenditure measure.
+However, the definitions and measurement conventions of `quantity`, `selling_price`, `other_discount`, and `coupon_discount` must be verified before selecting a reliable expenditure outcome.
 
 ### Double Machine Learning
 
-Double Machine Learning combines machine learning techniques with statistical methods to estimate causal effects under suitable identification assumptions.
+Double Machine Learning combines machine learning methods with statistical techniques to estimate causal effects under appropriate identification assumptions.
 
-It does not independently solve problems involving:
+It does not independently solve:
 
 * Unobserved confounding.
 * Incorrect treatment definitions.
-* Invalid outcome measurements.
+* Invalid outcome measurement.
 * Unreliable treatment assignment.
 * Lack of treatment overlap.
 
-## 7. Technology Stack
+## 8. Technology Stack
 
-| Technology   | Purpose                                 |
-| ------------ | --------------------------------------- |
-| Python       | Main programming language               |
-| JupyterLab   | Research and experimentation            |
-| NumPy        | Numerical computations                  |
-| Pandas       | Data manipulation and analysis          |
-| Matplotlib   | Data visualization                      |
-| Seaborn      | Statistical visualization               |
-| Scikit-learn | Machine learning                        |
-| Git          | Version control                         |
-| GitHub       | Project documentation and collaboration |
+| Technology   | Purpose                      |
+| ------------ | ---------------------------- |
+| Python       | Programming language         |
+| JupyterLab   | Research and experimentation |
+| NumPy        | Numerical computations       |
+| Pandas       | Data manipulation            |
+| Matplotlib   | Data visualization           |
+| Seaborn      | Statistical visualization    |
+| Scikit-learn | Machine learning             |
+| Git          | Version control              |
+| GitHub       | Project documentation        |
 
-## 8. Current Research Limitations
+## 9. Current Research Limitations
 
-* Actual campaign exposure has not yet been established.
-* Treatment assignment mechanism remains unresolved.
+* Actual campaign exposure remains unresolved.
+* Treatment assignment mechanism is not established.
 * Campaign type labels are anonymized.
 * Customer demographic information is not available for every training record.
 * Transaction quantity units require further documentation.
-* The meaning of selling price needs verification.
-* Discount calculation conventions remain unconfirmed.
-* A defensible customer-level expenditure outcome is still under investigation.
-* Causal identification assumptions require additional verification.
+* Selling price measurement conventions remain uncertain.
+* Discount calculation conventions need verification.
+* A validated customer-level expenditure outcome has not yet been established.
+* Causal identification assumptions require further investigation.
 
-## 9. Future Work
+## 10. Next Research Phase — Causal Identification and DML Feasibility
 
-### Day 20 and Upcoming Research
+The original 20-day project plan has been completed.
 
-* Investigate original transaction variable definitions.
-* Verify the meaning and units of quantity.
-* Validate selling price and discount calculations.
-* Assess customer-level outcome feasibility.
-* Investigate campaign exposure and treatment assignment.
-* Evaluate potential confounding variables.
-* Examine treatment overlap.
-* Finalize the causal research design.
-* Assess Double Machine Learning feasibility.
-* Conduct estimation only after identification assumptions are justified.
-* Perform robustness and sensitivity analysis.
+The next phase will focus on:
 
-## 10. Research Principles
-
-This project follows these principles:
-
-* Reproducible analysis.
-* Clear documentation.
-* Proper data validation.
-* Transparent assumptions.
-* Separation of correlation and causation.
-* No unsupported interpretation of anonymized variables.
-* No premature causal estimation.
+1. Original transaction variable documentation.
+2. Customer-level outcome validation.
+3. Actual campaign exposure investigation.
+4. Treatment assignment mechanism.
+5. Confounding variable identification.
+6. Treatment and control group overlap.
+7. Causal identification strategy.
+8. Double Machine Learning feasibility.
+9. Causal estimation, if identification is justified.
+10. Robustness and sensitivity analysis.
 
 ## 11. Project Status
 
-| Milestone                                        | Status      |
-| ------------------------------------------------ | ----------- |
-| Initial dataset exploration (Days 1–15)          | Completed   |
-| Dataset documentation and causal design (Day 16) | Completed   |
-| Treatment definition assessment (Day 17)         | Completed   |
-| Transaction documentation research (Day 18)      | Completed   |
-| Transaction outcome validation (Day 19)          | Completed   |
-| Outcome feasibility assessment                   | In progress |
-| Causal identification                            | In progress |
-| DML estimation                                   | Pending     |
+| Milestone                                   | Status      |
+| ------------------------------------------- | ----------- |
+| Initial data analysis (Days 1–15)           | Completed   |
+| Dataset documentation (Day 16)              | Completed   |
+| Treatment definition assessment (Day 17)    | Completed   |
+| Transaction documentation research (Day 18) | Completed   |
+| Transaction outcome validation (Day 19)     | Completed   |
+| Outcome feasibility assessment (Day 20)     | Completed   |
+| Final outcome validation                    | In progress |
+| Causal identification                       | Pending     |
+| DML feasibility                             | Pending     |
+| DML estimation                              | Pending     |
 
-**Current Progress: Day 19 Completed**
+## 12. Conclusion
 
-## 12. Author
+EconoCausal aims to develop a reliable causal machine learning framework for understanding the effects of promotional campaigns on customer purchasing behaviour.
+
+The first 20 days established a foundation in dataset understanding, transaction analysis, treatment investigation, and outcome feasibility.
+
+The next phase will focus on establishing a scientifically defensible treatment, outcome, and identification strategy before attempting Double Machine Learning estimation.
+
+## 13. Author
 
 Developed as part of a Data Science internship project.
 
-**Project Name:** EconoCausal
+**Project:** EconoCausal
 **Research Focus:** Dynamic Pricing and Causal Analysis Using Double Machine Learning
+**Current Progress:** Day 20 Completed

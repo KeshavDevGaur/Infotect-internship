@@ -1,334 +1,400 @@
-# EconoCausal
+# 📊 EconoCausal
 
-### Dynamic Pricing and Causal Analysis Using Double Machine Learning
+### Customer Coupon Redemption Prediction & Causal Campaign Analysis
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-yellow)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange)
-![Project Status](https://img.shields.io/badge/Progress-Day%2020-success)
+**EconoCausal** is a machine learning and data science project designed to analyze customer coupon redemption behaviour, understand promotional campaign performance, and investigate how offers may influence customer purchasing behaviour.
 
-## 1. Project Overview
+The project combines exploratory data analysis, customer behaviour analysis, feature engineering, machine learning, and causal inference feasibility assessment to develop a foundation for data-driven marketing decisions.
 
-EconoCausal is a data science research project focused on understanding customer purchasing behaviour, promotional campaigns, discounts, and the feasibility of causal analysis using the AmExpert 2019 Marketing Campaign dataset.
+---
 
-The project investigates whether promotional campaigns and coupon-based discounts influence customer purchasing behaviour and expenditure.
+## 🎯 Project Objectives
 
-The long-term objective is to evaluate whether Double Machine Learning (DML) can provide reliable estimates of promotional campaign effects.
+The main objectives of EconoCausal are:
 
-Unlike conventional predictive modelling, this project focuses on understanding causal relationships rather than simply identifying correlations.
+* Analyze customer purchasing and coupon redemption behaviour.
+* Understand the relationship between customers, campaigns, coupons, and transactions.
+* Identify important factors associated with coupon redemption.
+* Develop a machine learning model to predict coupon redemption.
+* Investigate whether promotional offers influence customer purchasing behaviour.
+* Explore treatment assignment, campaign exposure, and causal identification.
+* Develop a Streamlit interface for model deployment.
 
-## 2. Main Research Goal
+---
 
-The primary research question is:
+## 💡 Problem Statement
 
-**Do promotional campaigns and coupon discounts actually cause changes in customer purchasing behaviour and expenditure?**
+Businesses frequently distribute promotional coupons to increase customer engagement and sales.
 
-The project aims to investigate:
+However, an important question remains:
 
-* Whether promotional offers increase customer spending.
-* Whether coupon campaigns influence purchasing behaviour.
-* Which customers respond to promotional interventions.
-* Whether discounts generate additional purchasing activity.
-* How businesses can improve promotional strategies using causal insights.
+**Does providing a promotional offer actually change customer purchasing behaviour, or would customers have purchased anyway?**
 
-## 3. Research Objectives
+Traditional redemption prediction models estimate whether customers are likely to redeem coupons but do not necessarily measure the actual incremental impact of an offer.
 
-* Understand customer purchasing behaviour.
-* Explore promotional campaign characteristics.
-* Analyze coupon and transaction information.
-* Investigate customer-level spending patterns.
-* Identify potential treatment and outcome variables.
-* Evaluate treatment assignment and campaign exposure.
-* Investigate confounding and identification assumptions.
-* Assess the feasibility of Double Machine Learning.
-* Develop a reproducible causal research workflow.
+EconoCausal addresses this problem through two complementary approaches:
 
-## 4. Dataset Information
+1. **Predictive Analysis:** Predicting customer coupon redemption using machine learning.
+2. **Causal Analysis:** Investigating whether available data supports measuring the actual impact of promotional offers.
 
-**Dataset:** AmExpert 2019 Marketing Campaign
+---
 
-The dataset contains customer, campaign, coupon, product, and transaction information.
+## 📂 Dataset Description
 
-### Dataset Files
+The project uses the **AmExpert 2019 Marketing Campaign dataset**.
 
-| File                            | Description                                                            |
-| ------------------------------- | ---------------------------------------------------------------------- |
-| `train.csv`                     | Training data containing customer-coupon records and redemption status |
-| `test_QyjYwdj.csv`              | Test dataset                                                           |
-| `campaign_data.csv`             | Campaign-related information                                           |
-| `customer_demographics.csv`     | Customer demographic information                                       |
-| `customer_transaction_data.csv` | Customer transaction history                                           |
-| `coupon_item_mapping.csv`       | Coupon-to-item mapping                                                 |
-| `item_data.csv`                 | Product and item information                                           |
-| `sample_submission_Byiv0dS.csv` | Sample submission format                                               |
+The dataset contains information about customers, campaigns, coupons, products, and transactions.
 
-**Note:** Raw datasets are stored locally in `data/raw/` and are not uploaded to GitHub.
+### Main Dataset Files
 
-## 5. Project Structure
+| Dataset                       | Description                                |
+| ----------------------------- | ------------------------------------------ |
+| train.csv                     | Training data containing redemption status |
+| test_QyjYwdj.csv              | Test dataset                               |
+| campaign_data.csv             | Campaign information                       |
+| customer_demographics.csv     | Customer demographic information           |
+| customer_transaction_data.csv | Customer purchase transactions             |
+| coupon_item_mapping.csv       | Coupon-to-item mapping                     |
+| item_data.csv                 | Product and item information               |
+| sample_submission_Byiv0dS.csv | Sample submission format                   |
+
+### Important Features
+
+* Customer ID
+* Campaign ID
+* Coupon ID
+* Campaign Type
+* Age Range
+* Marital Status
+* Income Bracket
+* Family Size
+* Purchase Frequency
+* Total Spending
+* Coupon Discount
+* Other Discount
+* Campaign Duration
+* Redemption Status
+
+**Target Variable:** `redemption_status`
+
+---
+
+## 🛠️ Technology Stack
+
+| Category                | Technologies        |
+| ----------------------- | ------------------- |
+| Programming Language    | Python              |
+| Data Analysis           | Pandas, NumPy       |
+| Data Visualization      | Matplotlib, Seaborn |
+| Machine Learning        | Scikit-learn        |
+| Model Serialization     | Joblib              |
+| Development Environment | JupyterLab          |
+| Deployment              | Streamlit           |
+| Version Control         | Git & GitHub        |
+
+---
+
+## 🔬 Project Workflow
+
+The project was developed through 20 structured analysis notebooks.
+
+### Phase 1: Data Understanding and Exploration
+
+| Day | Notebook                      | Objective                                  |
+| --- | ----------------------------- | ------------------------------------------ |
+| 01  | Data Inspection               | Understanding datasets and structure       |
+| 02  | Data Quality Analysis         | Missing values and duplicate checks        |
+| 03  | Dataset Relationships         | Identifying relationships between datasets |
+| 04  | Target Analysis               | Understanding redemption status            |
+| 05  | Customer Coupon Analysis      | Exploring customer and coupon behaviour    |
+| 06  | Transaction Discount Analysis | Analyzing discounts and transactions       |
+| 07  | Dataset Integration           | Combining relevant datasets                |
+
+### Phase 2: Treatment and Outcome Analysis
+
+| Day | Notebook                      | Objective                                 |
+| --- | ----------------------------- | ----------------------------------------- |
+| 08  | Treatment Outcome Analysis    | Exploring treatment and outcome variables |
+| 09  | Campaign Exposure Analysis    | Investigating campaign exposure           |
+| 10  | Customer Campaign Analysis    | Studying customer-campaign relationships  |
+| 11  | Treatment Outcome Definition  | Defining treatment and outcomes           |
+| 12  | Treatment Assignment Analysis | Investigating treatment assignment        |
+| 13  | Customer Exposure Analysis    | Examining customer-level exposure         |
+
+### Phase 3: Causal Identification and Validation
+
+| Day | Notebook                       | Objective                                   |
+| --- | ------------------------------ | ------------------------------------------- |
+| 14  | Causal Identification          | Assessing causal identification feasibility |
+| 15  | Treatment Assignment Evidence  | Evaluating treatment assignment evidence    |
+| 16  | Dataset Documentation          | Documenting data and causal design          |
+| 17  | Treatment Definition           | Refining treatment definitions              |
+| 18  | Dataset Documentation Research | Consolidating dataset research              |
+| 19  | Transaction Outcome Validation | Validating transaction outcomes             |
+| 20  | Transaction Measurement        | Assessing outcome measurement feasibility   |
+
+---
+
+## 🤖 Machine Learning Model
+
+EconoCausal uses a **Random Forest Classifier** to predict customer coupon redemption.
+
+### Model Architecture
+
+The trained model uses a Scikit-learn Pipeline.
+
+**1. Numerical Preprocessing**
+
+* SimpleImputer (Median Strategy)
+* StandardScaler
+
+**2. Categorical Preprocessing**
+
+* SimpleImputer (Most Frequent Strategy)
+* OneHotEncoder
+
+**3. Classification Algorithm**
+
+* RandomForestClassifier
+
+### Model Configuration
+
+```python
+RandomForestClassifier(
+    class_weight='balanced',
+    max_depth=15,
+    min_samples_leaf=10,
+    min_samples_split=10,
+    n_jobs=-1,
+    random_state=42
+)
+```
+
+### Important Model Features
+
+* Campaign Type
+* Customer Demographics
+* Purchase Frequency
+* Total Quantity
+* Total Spending
+* Average Spending
+* Coupon Discount
+* Other Discount
+* Campaign Duration
+* Campaign Start Month
+* Campaign Start Year
+* Product Diversity
+
+### Target Distribution
+
+The training dataset contains:
+
+| Redemption Status | Records |
+| ----------------- | ------: |
+| 0 (Not Redeemed)  |  77,640 |
+| 1 (Redeemed)      |     729 |
+| Total             |  78,369 |
+
+The dataset has significant class imbalance. Therefore, balanced class weights were incorporated into the Random Forest classifier.
+
+---
+
+## 📈 Causal Analysis
+
+One of the most important components of EconoCausal is its investigation of causal relationships.
+
+The project explores the following question:
+
+**How much does customer purchasing behaviour change when a promotional offer is given?**
+
+The intended causal framework is:
+
+* Treatment: Receiving a promotional offer.
+* Control: Not receiving the promotional offer.
+* Outcome: Customer purchasing behaviour.
+* Treatment Effect: Difference in outcomes attributable to receiving the offer.
+
+However, identifying actual offer exposure and treatment assignment is essential.
+
+The available dataset did not establish sufficiently reliable treatment-assignment evidence.
+
+Therefore:
+
+* Campaign types X and Y were not automatically treated as experimental treatment and control groups.
+* Coupon redemption was not considered proof of offer assignment.
+* Transaction discounts alone were not considered sufficient evidence of offer exposure.
+* Numerical causal treatment effects were not reported.
+
+This distinction prevents misleading business conclusions.
+
+### Future Causal Analysis
+
+With verified treatment-assignment data, the project can be extended using:
+
+* Average Treatment Effect (ATE)
+* Conditional Average Treatment Effect (CATE)
+* Double Machine Learning (DML)
+* Uplift Modelling
+* Treatment Effect Heterogeneity
+
+---
+
+## 🚀 Streamlit Deployment
+
+EconoCausal includes a Streamlit application for presenting the machine learning project.
+
+### Application Features
+
+* EconoCausal project interface
+* Customer coupon redemption prediction overview
+* Machine learning model loading
+* Model deployment status
+* Project overview section
+
+### Run Locally
+
+Clone the repository:
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+Navigate to the project directory:
+
+```bash
+cd EconoCausal
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Launch the application:
+
+```bash
+streamlit run app.py
+```
+
+The application will be available at:
+
+```text
+http://localhost:8501
+```
+
+**Note:** The current verified Streamlit implementation loads the saved model and displays the project overview. A complete interactive prediction form requires additional implementation and testing.
+
+---
+
+## 📁 Project Structure
 
 ```text
 EconoCausal/
 │
 ├── data/
 │   └── raw/
-│       └── Raw datasets (not uploaded)
 │
 ├── notebooks/
-│   ├── Day 01–15 notebooks
-│   ├── 16_dataset_documentation_causal_design.ipynb
-│   ├── 17_treatment_definition_identification_strategy.ipynb
+│   ├── 01_data_inspection.ipynb
+│   ├── 02_data_quality_analysis.ipynb
+│   ├── 03_dataset_relationships.ipynb
+│   ├── 04_target_analysis.ipynb
+│   ├── 05_customer_coupon_analysis.ipynb
+│   ├── 06_transaction_discount_analysis.ipynb
+│   ├── 07_dataset_integration.ipynb
+│   ├── 08_treatment_outcome_analysis.ipynb
+│   ├── 09_campaign_exposure_analysis.ipynb
+│   ├── 10_customer_campaign_analysis.ipynb
+│   ├── 11_treatment_outcome_definition.ipynb
+│   ├── 12_treatment_assignment_analysis.ipynb
+│   ├── 13_customer_exposure_analysis.ipynb
+│   ├── 14_causal_identification.ipynb
+│   ├── 15_treatment_assignment_evidence.ipynb
+│   ├── 16_dataset_documentation.ipynb
+│   ├── 17_treatment_definition.ipynb
 │   ├── 18_dataset_documentation_research.ipynb
 │   ├── 19_transaction_outcome_validation.ipynb
-│   ├── 20_transaction_measurement_outcome_feasibility.ipynb
-│   └── README.md
+│   └── 20_transaction_measurement_outcome_feasibility.ipynb
+│
+├── models/
+│   ├── econocausal_model.pkl
+│   └── model_features.pkl
 │
 ├── reports/
-│   ├── DAY16_REPORT.md
-│   ├── DAY17_REPORT.md
-│   ├── DAY18_REPORT.md
-│   ├── DAY19_REPORT.md
-│   ├── DAY20_REPORT.md
-│   ├── day16_causal_research_design_assessment.csv
-│   ├── day17_treatment_candidate_assessment.csv
-│   ├── day17_causal_identification_assessment.csv
-│   ├── day17_causal_research_assessment.csv
-│   ├── day18_fuel_item_analysis.csv
-│   ├── day19_customer_spending_analysis.csv
-│   ├── day20_outcome_feasibility_assessment.csv
-│   └── README.md
 │
+├── src/
+│
+├── tests/
+│
+├── app.py
+├── requirements.txt
 └── README.md
 ```
 
-## 6. Research Progress
+*The structure represents the project's main components; retain the actual notebook filenames and directory names from your repository.*
 
-### Phase 1 — Initial Data Analysis (Days 1–15)
+---
 
-Completed the initial project workflow, including:
+## 📊 Key Project Outcomes
 
-* Dataset exploration.
-* Data inspection and preparation.
-* Customer and campaign investigation.
-* Preliminary descriptive analysis.
-* Initial research documentation.
+The project successfully established:
 
-### Phase 2 — Causal Research Design
+1. A structured 20-notebook data science workflow.
+2. Comprehensive exploration of customer, campaign, coupon, and transaction datasets.
+3. Identification of severe class imbalance in redemption behaviour.
+4. A Random Forest machine learning pipeline.
+5. Model serialization using Joblib.
+6. A documented causal identification feasibility assessment.
+7. A Streamlit deployment prototype.
+8. A foundation for future customer uplift and campaign effectiveness analysis.
 
-#### Day 16 — Dataset Documentation and Causal Design
+Numerical predictive performance metrics and causal impact estimates remain to be validated before being reported.
 
-**Work completed:**
+---
 
-* Reviewed dataset structure.
-* Investigated available variables.
-* Studied potential causal research questions.
-* Assessed preliminary causal research feasibility.
-* Documented research limitations.
+## 🔮 Future Improvements
 
-**Output:**
+Potential improvements include:
 
-* `day16_causal_research_design_assessment.csv`
+* Complete interactive customer prediction functionality.
+* Add customer-level redemption probability.
+* Develop campaign effectiveness dashboards.
+* Identify reliable treatment and control groups.
+* Integrate verified offer-exposure information.
+* Implement Double Machine Learning.
+* Develop customer uplift segmentation.
+* Estimate incremental revenue and customer spending when causal assumptions are satisfied.
+* Deploy the application to Streamlit Community Cloud.
 
-#### Day 17 — Treatment Definition and Identification Strategy
+---
 
-**Work completed:**
+## 🎯 Project Vision
 
-* Evaluated potential treatment variables.
-* Investigated treatment assignment and campaign exposure.
-* Examined potential outcome variables.
-* Assessed causal identification requirements.
-* Documented unresolved assumptions.
+The long-term vision of EconoCausal is to move beyond traditional coupon redemption prediction toward understanding the actual incremental impact of marketing campaigns.
 
-**Outputs:**
+Rather than simply identifying customers who are likely to redeem coupons, the system aims to help businesses understand which customers genuinely change their purchasing behaviour because of promotional offers.
 
-* `day17_treatment_candidate_assessment.csv`
-* `day17_causal_identification_assessment.csv`
-* `day17_causal_research_assessment.csv`
+**Predict customer behaviour. Understand campaign impact. Enable smarter marketing decisions.**
 
-**Key finding:**
+---
 
-Actual campaign exposure and a sufficiently defensible treatment assignment mechanism have not yet been established.
+## 👨‍💻 Author
 
-#### Day 18 — Dataset Documentation Research
+**Keshav Dev Gaur**
 
-**Work completed:**
+B.Tech – Computer Science and Engineering (AI/ML)
 
-* Investigated original dataset documentation.
-* Studied transaction variables.
-* Examined extreme transaction quantities.
-* Investigated Fuel category transaction patterns.
-* Analyzed frequently observed Fuel items.
-* Compared price-to-quantity ratios.
-* Documented measurement limitations.
+Interested in:
 
-**Output:**
+* Machine Learning
+* Data Science
+* Artificial Intelligence
+* Causal Inference
+* Predictive Analytics
 
-* `day18_fuel_item_analysis.csv`
+---
 
-**Key finding:**
+⭐ If you find this project interesting, consider giving the repository a star!
 
-Six frequently observed Fuel items showed relatively consistent price-to-quantity ratios, with a mean of approximately 0.086807.
-
-#### Day 19 — Transaction Outcome Validation
-
-**Work completed:**
-
-* Inspected transaction columns and data types.
-* Checked missing values and duplicates.
-* Investigated transaction date coverage.
-* Analyzed quantity and selling price.
-* Examined other and coupon discounts.
-* Investigated item-level price variation.
-* Compared preliminary expenditure candidates.
-* Aggregated transactions at customer level.
-* Analyzed customer spending distributions.
-* Investigated spending concentration.
-* Exported and verified customer-level analysis.
-
-**Output:**
-
-* `day19_customer_spending_analysis.csv`
-
-**Key finding:**
-
-Customer-level aggregation provides exploratory spending measures, but the exact definitions of quantity, selling price, and discounts require further validation.
-
-#### Day 20 — Transaction Measurement Verification and Outcome Feasibility
-
-**Work completed:**
-
-* Investigated transaction variable definitions.
-* Examined selling price and quantity relationships.
-* Analyzed discount measurement patterns.
-* Compared recorded and adjusted amounts.
-* Investigated product category differences.
-* Examined customer-level discount impact.
-* Compared customers with and without recorded coupon discounts.
-* Assessed customer-level outcome feasibility.
-* Documented the final research recommendation.
-
-**Outputs:**
-
-* `20_transaction_measurement_outcome_feasibility.ipynb`
-* `DAY20_REPORT.md`
-* `day20_outcome_feasibility_assessment.csv`
-
-**Key finding:**
-
-Customer-level expenditure analysis is technically possible, but the actual expenditure measurement convention has not been sufficiently verified.
-
-**Outcome feasibility decision: PARTIALLY FEASIBLE**
-
-Neither preliminary expenditure candidate has yet been established as a validated causal outcome.
-
-## 7. Causal Research Framework
-
-The project follows an important principle:
-
-**Prediction does not automatically imply causation.**
-
-Before estimating campaign effects, the research must establish:
-
-1. A clearly defined treatment or intervention.
-2. A defensible treatment assignment mechanism.
-3. A properly measured outcome.
-4. Relevant pre-treatment confounders.
-5. Appropriate identification assumptions.
-6. Sufficient treatment overlap.
-
-### Treatment Considerations
-
-`redemption_status` is a potential outcome candidate, but coupon redemption does not independently establish campaign exposure or treatment assignment.
-
-Campaign types X and Y are anonymized categories and should not automatically be interpreted as treatment and control groups.
-
-### Outcome Considerations
-
-Customer transaction data provides information about purchasing behaviour.
-
-However, the definitions and measurement conventions of `quantity`, `selling_price`, `other_discount`, and `coupon_discount` must be verified before selecting a reliable expenditure outcome.
-
-### Double Machine Learning
-
-Double Machine Learning combines machine learning methods with statistical techniques to estimate causal effects under appropriate identification assumptions.
-
-It does not independently solve:
-
-* Unobserved confounding.
-* Incorrect treatment definitions.
-* Invalid outcome measurement.
-* Unreliable treatment assignment.
-* Lack of treatment overlap.
-
-## 8. Technology Stack
-
-| Technology   | Purpose                      |
-| ------------ | ---------------------------- |
-| Python       | Programming language         |
-| JupyterLab   | Research and experimentation |
-| NumPy        | Numerical computations       |
-| Pandas       | Data manipulation            |
-| Matplotlib   | Data visualization           |
-| Seaborn      | Statistical visualization    |
-| Scikit-learn | Machine learning             |
-| Git          | Version control              |
-| GitHub       | Project documentation        |
-
-## 9. Current Research Limitations
-
-* Actual campaign exposure remains unresolved.
-* Treatment assignment mechanism is not established.
-* Campaign type labels are anonymized.
-* Customer demographic information is not available for every training record.
-* Transaction quantity units require further documentation.
-* Selling price measurement conventions remain uncertain.
-* Discount calculation conventions need verification.
-* A validated customer-level expenditure outcome has not yet been established.
-* Causal identification assumptions require further investigation.
-
-## 10. Next Research Phase — Causal Identification and DML Feasibility
-
-The original 20-day project plan has been completed.
-
-The next phase will focus on:
-
-1. Original transaction variable documentation.
-2. Customer-level outcome validation.
-3. Actual campaign exposure investigation.
-4. Treatment assignment mechanism.
-5. Confounding variable identification.
-6. Treatment and control group overlap.
-7. Causal identification strategy.
-8. Double Machine Learning feasibility.
-9. Causal estimation, if identification is justified.
-10. Robustness and sensitivity analysis.
-
-## 11. Project Status
-
-| Milestone                                   | Status      |
-| ------------------------------------------- | ----------- |
-| Initial data analysis (Days 1–15)           | Completed   |
-| Dataset documentation (Day 16)              | Completed   |
-| Treatment definition assessment (Day 17)    | Completed   |
-| Transaction documentation research (Day 18) | Completed   |
-| Transaction outcome validation (Day 19)     | Completed   |
-| Outcome feasibility assessment (Day 20)     | Completed   |
-| Final outcome validation                    | In progress |
-| Causal identification                       | Pending     |
-| DML feasibility                             | Pending     |
-| DML estimation                              | Pending     |
-
-## 12. Conclusion
-
-EconoCausal aims to develop a reliable causal machine learning framework for understanding the effects of promotional campaigns on customer purchasing behaviour.
-
-The first 20 days established a foundation in dataset understanding, transaction analysis, treatment investigation, and outcome feasibility.
-
-The next phase will focus on establishing a scientifically defensible treatment, outcome, and identification strategy before attempting Double Machine Learning estimation.
-
-## 13. Author
-
-Developed as part of a Data Science internship project.
-
-**Project:** EconoCausal
-**Research Focus:** Dynamic Pricing and Causal Analysis Using Double Machine Learning
-**Current Progress:** Day 20 Completed
+**EconoCausal – From Coupon Prediction to Causal Marketing Intelligence.**
